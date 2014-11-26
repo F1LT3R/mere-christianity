@@ -122,7 +122,7 @@ Mere Christianity is comprised of 4 small books, most of which were radio broadc
     - [3-4: Social Morality, Morality and Psychoanalysis](https://f1lt3r.github.io/mere-christianity/book-3/MereChristianity-Book3-Chapters3-4.pdf)
     - [5-6: Sexual Morality, Christian Marriage](https://f1lt3r.github.io/mere-christianity/book-3/MereChristianity-Book3-Chapters5-6.pdf)
     - [7-8: Forgiveness, The Great Sin](https://f1lt3r.github.io/mere-christianity/book-3/MereChristianity-Book3-Chapters7-8.pdf)
-    - [9-10: Charity, Hope](https://f1lt3r.github.io/mere-christianity/book-3/ereChristianity-Book3-Chapters9-10.pdf)
+    - [9-10: Charity, Hope](https://f1lt3r.github.io/mere-christianity/book-3/MereChristianity-Book3-Chapters9-10.pdf)
     - [11-12: Faith, Faith In The Second Sense](https://f1lt3r.github.io/mere-christianity/book-3/MereChristianity-Book3-Chapters11-12.pdf)
 4. Beyond Personality: Or First Steps In The Doctrine Of The Trinity
     - [1-2: Making And Begetting, The Three Personal God](https://f1lt3r.github.io/mere-christianity/book-4/MereChristianity-Book4-Chapters1-2.pdf)
