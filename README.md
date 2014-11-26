@@ -109,8 +109,28 @@ Mere Christianity is comprised of 4 small books, most of which were radio broadc
 
 ###Chapters by PDF (2-by-2)
 
-Coming Soon...
-
+1. Right & Wrong as a Clue to The Meaning of The Universe
+    - [1-2: The Law of Human Nature, Some Objections](https://f1lt3r.github.io/mere-christianity/book-1/MereChristianity-Book1-Chapters1-2.pdf)
+    - [2-4: The Reality of The Law, What Lies Behind The Law](https://f1lt3r.github.io/mere-christianity/book-1/MereChristianity-Book1-Chapters3-4.pdf)
+    - [5: We Have Cause To Be Uneasy](https://f1lt3r.github.io/mere-christianity/book-1/MereChristianity-Book1-Chapters5.pdf)
+2. What Christian's Believe
+    - [1-2: Rival Conceptions of God, The Invasion](https://f1lt3r.github.io/mere-christianity/book-2/MereChristianity-Book2-Chapters1-2.pdf)
+    - [3-4: The Shocking Alternative, The Perfect Penitent](https://f1lt3r.github.io/mere-christianity/book-2/MereChristianity-Book2-Chapters3-4.pdf)
+    - [5: The Practical Conclusion](https://f1lt3r.github.io/mere-christianity/book-2/MereChristianity-Book2-Chapter5.pdf)
+3. Christian Behavior
+    - [1-2: The Three Parts of Morality, The Cardinal Values](https://f1lt3r.github.io/mere-christianity/book-3/MereChristianity-Book3-Chapters1-2.pdf)
+    - [3-4: Social Morality, Morality and Psychoanalysis](https://f1lt3r.github.io/mere-christianity/book-3/MereChristianity-Book3-Chapters3-4.pdf)
+    - [5-6: Sexual Morality, Christian Marriage](https://f1lt3r.github.io/mere-christianity/book-3/MereChristianity-Book3-Chapters5-6.pdf)
+    - [7-8: Forgiveness, The Great Sin](https://f1lt3r.github.io/mere-christianity/book-3/MereChristianity-Book3-Chapters7-8.pdf)
+    - [9-10: Charity, Hope](https://f1lt3r.github.io/mere-christianity/book-3/ereChristianity-Book3-Chapters9-10.pdf)
+    - [11-12: Faith, Faith In The Second Sense](https://f1lt3r.github.io/mere-christianity/book-3/MereChristianity-Book3-Chapters11-12.pdf)
+4. Beyond Personality: Or First Steps In The Doctrine Of The Trinity
+    - [1-2: Making And Begetting, The Three Personal God](https://f1lt3r.github.io/mere-christianity/book-4/MereChristianity-Book4-Chapters1-2.pdf)
+    - [3-4: Time And Beyond, Good Infection](https://f1lt3r.github.io/mere-christianity/book-4/MereChristianity-Book4-Chapters3-4.pdf)
+    - [5-6: The Obstinate Toy Solidiers, Two Notes](https://f1lt3r.github.io/mere-christianity/book-4/ereChristianity-Book4-Chapters5-6.pdf)
+    - [7-8: Let's Pretend, Is Christianity Hard or Easy?](https://f1lt3r.github.io/mere-christianity/book-4/MereChristianity-Book4-Chapters7-8.pdf)
+    - [9-10: Counting The Cost, Nice People or New Men](https://f1lt3r.github.io/mere-christianity/book-4/MereChristianity-Book4-Chapters9-10.pdf)
+    - [11: The New Men](https://f1lt3r.github.io/mere-christianity/book-4/MereChristianity-Book4-Chapters11.pdf)
 
 ##Additional Resources
 
@@ -166,7 +186,9 @@ https://www.youtube.com/watch?v=tw9biRRv_bM
 
 ###About This Repository
 
-This repository was creates as a study-resource for the book Mere Christianity. It is meant to be used to study Mere Christianity at the rate of about 2 Chapters per week. It does not contain a study-guide as such, yet; but I may add this later if we decide to write one. Do you have one you would like to add to this resource? (Pull requests welcome.)
+This repository was creates as a study-resource for the book Mere Christianity. It is meant to be used to study Mere Christianity at the rate of about 2 Chapters per week. We recommend using the odd numbered chapters at the ends of Books 2, 3, and 4 as time to wrap up and talk about all the things C. S. Lewis. had taken us through, and think about why he is putting his arguments together in this way, and where he might be headed with the next book.
+
+This repository does not contain a study-guide as such, yet; but we may add this later if we decide to write one. Do you have one you would like to add to this resource? (Pull requests welcome.)
 
 Currently we are using a Study Guide we found on Amazon, which seems to be fairly up-to-date and fairly relevant to the social climate of 2014: http://www.amazon.com/Mere-Christianity-Discussion-Study-Guide/dp/1479169838
 
