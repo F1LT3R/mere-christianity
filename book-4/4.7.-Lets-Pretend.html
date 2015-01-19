@@ -1,0 +1,553 @@
+<!DOCTYPE html><head><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+body .markdown-body {
+  padding: 30px;
+}
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.markdown-body a {
+  background: transparent;
+}
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+.markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.markdown-body img {
+  border: 0;
+}
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.markdown-body pre {
+  overflow: auto;
+}
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+.markdown-body input {
+  line-height: normal;
+}
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.markdown-body h1 {
+  font-size: 30px;
+}
+.markdown-body h2 {
+  font-size: 21px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14px;
+}
+.markdown-body h5 {
+  font-size: 12px;
+}
+.markdown-body h6 {
+  font-size: 11px;
+}
+.markdown-body blockquote {
+  margin: 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+.markdown-body dd {
+  margin-left: 0;
+}
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li > p {
+  margin-top: 16px;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-body table th {
+  font-weight: bold;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+.markdown-body .pl-c {
+  color: #969896;
+}
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.markdown-body .pl-mq {
+  color: #008080;
+}
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+.file {
+  list-style-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/file-16.png');
+}
+.dir {
+  list-style-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/699086-icon-94-folder-16.png');
+}
+.md {
+  list-style-image: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-16.png');
+}
+</style></head><body><article><h1 id="mere-christianity">Mere Christianity</h1>
+<p>by C. S. Lewis</p>
+<h2 id="4-beyond-personality-or-first-steps-in-the-doctrine-of-the-trinity">4. Beyond Personality: Or First Steps In The Doctrine Of The Trinity</h2>
+<h3 id="4-7-let-s-pretend">4.7. Let&apos;s Pretend</h3>
+<p>May I once again start by putting two pictures, or two stories rather, into your minds? One is the story you have all read called Beauty and the Beast. The girl, you remember, had to marry a monster for some reason. And she did. She kissed it as if it were a man. And then, much to her relief, it really turned into a man and all went well. The other story is about someone who had to wear a mask; a mask which made him look much nicer than he really was. He had to wear it for year. And when he took it off he found his own face had grown to fit it. He was now really beautiful. What had begun as disguise had become a reality. I think both these stories may (in a fanciful way, of course) help to illustrate what I have to say in this chapter. Up till now, I have been trying to describe facts-what God is and what He has done. Now I want to talk about practice-what do we do next? What difference does all this theology make? It can start making a difference tonight. If you are interested enough to have read thus far you are probably interested enough to make a shot at saying your prayers: and, whatever else you say, you will probably say the Lord&apos;s Prayer.</p>
+<p>Its very first words are Our Father. Do you now see what those words mean? They mean quite frankly, that you are putting yourself in the place of a son of God. To put it bluntly, you are dressing up as Christ. If you like, you are pretending. Because, of course, the moment you realise what the words mean, you realise that you are not a son of God. You are not being like The Son of God, whose will and interests are at one with those of the Father: you are a bundle of self-centred fears, hopes, greeds, jealousies, and self-conceit, all doomed to death. So that, in a way, this dressing up as Christ is a piece of outrageous cheek. But the odd thing is that He has ordered us to do it.</p>
+<p>Why? What is the good of pretending to be what you are not? Well, even on the human level, you know, there are two kinds of pretending. There is a bad kind, where the pretence is there instead of the real thing; as when a man pretends he is going to help you instead of really helping you. But there is also a good kind, where the pretence leads up to the real thing. When you are not feeling particularly friendly but know you ought to be, the best thing you can do, very often, is to put on a friendly manner and behave as if you were a nicer person than you actually are. And in a few minutes, as we have all noticed, you will be really feeling friendlier than you were. Very often the only way to get a quality in reality is to start behaving as if you had it already. That is why children&apos;s games are so important. They are always pretending to be grown-ups-playing soldiers, playing shop. But all the time, they are hardening their muscles and sharpening their wits, so that the pretence of being grown-up helps them to grow up in earnest.</p>
+<p>Now, the moment you realise &quot;Here I am, dressing up as Christ,&quot; it is extremely likely that you will see at once some way in which at that very moment the pretence could be made less of a pretence and more of a reality. You will find several things going on in your mind which would not be going on there if you were really a son of God. Well, stop them. Or you may realise that, instead of saying your prayers, you ought to be downstairs writing a letter, or helping your wife to wash-up. Well, go and do it.</p>
+<p>You see what is happening. The Christ Himself, the Son of God who is man (just like you) and God (just like His Father) is actually at your side and is already at that moment beginning to turn your pretence into a reality. This is not merely a fancy way of saying that your conscience is telling you what to do. If you simply ask your conscience, you get one result: if you remember that you are dressing up as Christ, you get a different one. There are lots of things which your conscience might not call definitely wrong (specially things in your mind) but which you will see at once you cannot go on doing if you are seriously trying to be like Christ. For you are no longer thinking simply about right and wrong; you are trying to catch the good infection from a Person. It is more like painting a portrait than like obeying a set of rules. And the odd thing is that while in one way it is much harder than keeping rules, in another way it is far easier.</p>
+<p>The real Son of God is at your side. He is beginning to turn you into the same kind of thing as Himself. He is beginning, so to speak, to &quot;inject&quot; His kind of life and thought, His Zoe, into you; beginning to turn the tin soldier into a live man. The part of you that does not like it is the part that is still tin.</p>
+<p>Some of you may feel that this is very unlike your own experience. You may say &quot;I&apos;ve never had the sense of being helped by an invisible Christ, but I often have been helped by other human beings.&quot; That is rather like the woman in the first war who said that if there were a bread shortage it would not bother her house because they always ate toast. If there is no bread there will be no toast. If there were no help from Christ, there would be no help from other human beings. He works on us in all sorts of ways: not only through what we think our &quot;religious life.&quot; He works through Nature, through our own bodies, through books, sometimes through experiences which seem (at the time) anti-Christian. When a young man who has been going to church in a routine way honestly realises that he does not believe in Christianity and stops going-provided he does it for honesty&apos;s sake and not just to annoy his parents-the spirit of Christ is probably nearer to him then than it ever was before. But above all, He works on us through each other.</p>
+<p>Men are mirrors, or &quot;carriers&quot; of Christ to other men. Sometimes unconscious carriers. This &quot;good infection&quot; can be carried by those who have not got it themselves. People who were not Christians themselves helped me to Christianity. But usually it is those who know Him that bring Him to others. That is why the Church, the whole body of Christians showing Him to one another, is so important. You might say that when two Christians are following Christ together there is not twice as much Christianity as when they are apart, but sixteen times as much.</p>
+<p>But do not forget this. At first it is natural for a baby to take its mother&apos;s milk without knowing its mother. It is equally natural for us to see the man who helps us without seeing Christ behind him. But we must not remain babies. We must go on to recognise the real Giver. It is madness not to. Because, if we do not, we shall be relying on human beings. And that is going to let us down. The best of them will make mistakes; all of them will die. We must be thankful to all the people who have helped us, we must honour them and love them. But never, never pin your whole faith on any human being: not if he is the best and wisest in the whole world. There are lots of nice things you can do with sand; but do not try building a house on it.</p>
+<p>And now we begin to see what it is that the New Testament is always talking about. It talks about Christians &quot;being born again&quot;; it talks about them &quot;putting on Christ&quot;; about Christ &quot;being formed in us&quot;; about our coming to &quot;have the mind of Christ.&quot;</p>
+<p>Put right out of your head the idea that these are only fancy ways of saying that Christians are to read what Christ said and try to carry it out-as a man may read what Plato or Marx said and try to carry it out. They mean something much more than that. They mean that a real Person, Christ, here and now, in that very room where you are saying your prayers, is doing things to you. It is not a question of a good man who died two thousand years ago. It is a living Man, still as much a man as you, and still as much God as He was when He created the world, really coming and interfering with your very self; killing the old natural self in you and replacing it with the kind of self He has. At first, only for moments. Then for longer periods. Finally, if all goes well, turning you permanently into a different sort of thing; into a new little Christ, a being which, in its own small way, has the same kind of life as God; which shares in His power, joy, knowledge and eternity. And soon we make two other discoveries.</p>
+<p>(1) We begin to notice, besides our particular sinful acts, our sinfulness; begin to be alarmed not only about what we do, but about what we are. This may sound rather difficult, so I will try to make it clear from my own case. When I come to my evening prayers and try to reckon up the sins of the day, nine times out of ten the most obvious one is some sin against charity; I have sulked or snapped or sneered or snubbed or stormed. And the excuse that immediately springs to my mind is that the provocation was so sudden and unexpected: I was caught off my guard, I had not time to collect myself. Now that may be an extenuating circumstance as regards those particular acts: they would obviously be worse if they had been deliberate and premeditated. On the other hand, surely what a man does when he is taken off his guard is the best evidence for what sort of a man he is? Surely what pops out before the man has time to put on a disguise is the truth? If there are rats in a cellar you are most likely to see them if you go in very suddenly. But the suddenness does not create the rats: it only prevents them from hiding. In the same way the suddenness of the provocation does not make me an ill-tempered man: it only shows me what an ill-tempered man I am. The rats are always there in the cellar, but if you go in shouting and noisily they will have taken cover before you switch on the light. Apparently the rats of resentment and vindictiveness are always there in the cellar of my soul. Now that cellar is out of reach of my conscious will. I can to some extent control my acts: I have no direct control over my temperament. And if (as I said before) what we are matters even more than what we do-if, indeed, what we do matters chiefly as evidence of what we are-then it follows that the change which I most need to undergo is a change that my own direct, voluntary efforts cannot bring about And this applies to my good actions too. How many of them were done for the right motive? How many for fear of public opinion, or a desire to show off? How many from a sort of obstinacy or sense of superiority which, in different circumstances, might equally had led to some very bad act? But I cannot, by direct moral effort, give myself new motives. After the first few steps in the Christian life we realise that everything which really needs to be done in our souls can be done only by God. And that brings us to something which has been very misleading in my language up to now.</p>
+<p>(2) I have been talking as if it were we who did everything. In reality, of course, it is God who does everything. We, at most, allow it to be done to us. In a sense you might even say it is God who does the pretending. The Three-Personal God, so to speak, sees before Him in fact a self-centred, greedy, grumbling, rebellious human animal. But He says &quot;Let us pretend that this is not a mere creature, but our Son. It is like Christ in so far as it is a Man, for He became Man. Let us pretend that it is also like Him in Spirit. Let us treat it as if it were what in fact it is not. Let us pretend in order to make the pretence into a reality.&quot; God looks at you as if you were a little Christ: Christ stands beside you to turn you into one. I daresay this idea of a divine make-believe sounds rather strange at first. But, is it so strange really? Is not that how the higher thing always raises the lower? A mother teaches her baby to talk by talking to it as if it understood long before it really does. We treat our dogs as if they were &quot;almost human&quot;: that is why they really become &quot;almost human&quot; in the end.</p>
+</article></body>

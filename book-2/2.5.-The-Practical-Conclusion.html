@@ -1,0 +1,548 @@
+<!DOCTYPE html><head><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+body .markdown-body {
+  padding: 30px;
+}
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.markdown-body a {
+  background: transparent;
+}
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+.markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.markdown-body img {
+  border: 0;
+}
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.markdown-body pre {
+  overflow: auto;
+}
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+.markdown-body input {
+  line-height: normal;
+}
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.markdown-body h1 {
+  font-size: 30px;
+}
+.markdown-body h2 {
+  font-size: 21px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14px;
+}
+.markdown-body h5 {
+  font-size: 12px;
+}
+.markdown-body h6 {
+  font-size: 11px;
+}
+.markdown-body blockquote {
+  margin: 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+.markdown-body dd {
+  margin-left: 0;
+}
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li > p {
+  margin-top: 16px;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-body table th {
+  font-weight: bold;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+.markdown-body .pl-c {
+  color: #969896;
+}
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.markdown-body .pl-mq {
+  color: #008080;
+}
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+.file {
+  list-style-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/file-16.png');
+}
+.dir {
+  list-style-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/699086-icon-94-folder-16.png');
+}
+.md {
+  list-style-image: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-16.png');
+}
+</style></head><body><article><h1 id="mere-christianity">Mere Christianity</h1>
+<p>by C. S. Lewis</p>
+<h2 id="2-what-christian-s-believe">2. What Christian&apos;s Believe</h2>
+<h3 id="2-5-the-practical-conclusion">2.5. The Practical Conclusion</h3>
+<p>The perfect surrender and humiliation were undergone by Christ: perfect because He was God, surrender and humiliation because He was man. Now the Christian belief is that if we somehow share the humility and suffering of Christ we shall also share in His conquest for death and find a new life after we have died and in it become perfect, and perfectly happy, creatures. This means something much more than our trying to follow His teaching. People often ask when the next step in evolution-the step to something beyond man-will happen. But on the Christian view, it has happened already. In Christ a new kind of man appeared: and the new kind of life which began in Him is to be put into us. How is this to be done? Now, please remember how we acquired the old, ordinary kind of life. We derived it from others, from our father and mother and all our ancestors, without our consent-and by a very curious process, involving pleasure, pain, and danger. A process you would never have guessed. Most of us spend a good many years in childhood trying to guess it: and some children, when they are first told, do not believe it-and I am not sure that I blame them, for it is very odd. Now the God who arranged that process is the same God who arranges how the new kind of life-the Christ life-is to be spread. We must be prepared for it being odd too. He did not consult us when He invented sex: He has not consulted us either when He invented this.</p>
+<p>There are three things that spread the Christ life to us: baptism, belief, and that mysterious action which different Christians call by different names-Holy Communion, the Mass, the Lord&apos;s Supper. At least, those are the three ordinary methods. I am not saying there may not be special cases where it is spread without one or more of these. I have not time to go into special cases, and I do not know enough. If you are trying in a few minutes to tell a man how to get to Edinburgh you will tell him the trains: he can, it is true, get there by boat or by a plane, but you will hardly bring that in. And I am not saying anything about which of these three things is the most essential. My Methodist friend would like me to say more about belief and less (in proportion) about the other two. But I am not going into that. Anyone who professes to teach you Christian doctrine will, in fact, tell you to use all three, and that is enough for our present purpose.</p>
+<p>I cannot myself see why these things should be the conductors of the new kind of life. But then, if one did not happen to know, I should never have seen any connection between a particular physical pleasure and the appearance of a new human being in the world. We have to take reality as it comes to us: there is no good jabbering about what it ought to be like or what we should have expected it to be like. But though I cannot see why it should be so, I can tell you why I believe it is so. I have explained why I have to believe that Jesus was (and is) God. And it seems plain as a matter of history that He taught His followers that the new life was communicated in this way. In other words, I believe it on His authority. Do not be scared by the word authority. Believing things on authority only means believing them because you have been told them by someone you think trustworthy. Ninety-nine per cent of the things you believe are believed on authority. I believe there is such a place as New York. I have not seen it myself. I could not prove by abstract reasoning that there must be such a place. I believe it because reliable people have told me so. The ordinary man believes in the Solar System, atoms, evolution, and the circulation of the blood on authority-because the scientists say so. Every historical statement in the world is believed on authority. None of us has seen the Norman Conquest or the defeat of the Armada. None of us could prove them by pure logic as you prove a thing in mathematics. We believe them simply because people who did see them have left writings that tell us about them: in fact, on authority. A man who jibbed at authority in other things as some people do in religion would have to be content to know nothing all his life.</p>
+<p>Do not think I am setting up baptism and belief and the Holy Communion as things that will do instead of your own attempts to copy Christ. Your natural life is derived from your parents; that does not mean it will stay there if you do nothing about it. You can lose it by neglect, or you can drive it away by committing suicide. You have to feed it and look after it: but always remember you are not making it, you are only keeping up a life you got from someone else. In the same way a Christian can lose the Christ-life which has been put into him, and he has to make efforts to keep it. But even the best Christian that ever lived is not acting on his own steam-he is only nourishing or protecting a life he could never have acquired by his own efforts. And that has practical consequences. As long as the natural life is in your body, it will do a lot towards repairing that body. Cut it, and up to a point it will heal, as a dead body would not. A live body is not one that never gets hurt, but one that can to some extent repair itself. In the same way a Christian is not a man who never goes wrong, but a man who is enabled to repent and pick himself up and begin over again after each stumble-because the Christ-life is inside him, repairing him all the time, enabling him to repeat (in some degree) the kind of voluntary death which Christ Himself carried out.</p>
+<p>That is why the Christian is in a different position from other people who are trying to be good. They hope, by being good, to please God if there is one; or-if they think there is not-at least they hope to deserve approval from good men. But the Christian thinks any good he does comes from the Christ-life inside him. He does not think God will love us because we are good, but that God will make us good because He loves us; just as the roof of a greenhouse does not attract the sun because it is bright, but becomes bright because the sun shines on it.</p>
+<p>And let me make it quite clear that when Christians say the Christ-life is in them, they do not mean simply something mental or moral. When they speak of being &quot;in Christ&quot; or of Christ being &quot;in them,&quot; this is not simply a way of saying that they are thinking about Christ or copying Him. They mean that Christ is actually operating through them; that the whole mass of Christians are the physical organism through which Christ acts&#x2014;that we are His fingers and muscles, the cells of His body. And perhaps that explains one or two things. It explains why this new life is spread not only by purely mental acts like belief, but by bodily acts like baptism and Holy Communion. It is not merely the spreading of an idea; it is more like evolution-a biological or super-biological fact. There is no good trying to be more spiritual than God. God never meant man to be a purely spiritual creature. That is why He uses material things like bread and wine to put the new life into us. We may think this rather crude and unspiritual. God does not: He invented eating. He likes matter. He invented it.</p>
+<p>Here is another thing that used to puzzle me. Is it not frightfully unfair that this new life should be confined to people who have heard of Christ and been able to believe in Him? But the truth is God has not told us what His arrangements about the other people are. We do know that no man can be saved except through Christ; we do not know that only those who know Him can be saved through Him, But in the meantime, if you are worried about the people outside, the most unreasonable thing you can do is to remain outside yourself. Christians are Christ&apos;s body, the organism through which He works. Every addition to that body enables Him to do more. If you want to help those outside you must add your own little cell to the body of Christ who alone can help them. Cutting off a man&apos;s fingers would be an odd way of getting him to do more work.</p>
+<p>Another possible objection is this. Why is God landing in this enemy-occupied world in disguise and starting a sort of secret society to undermine the devil? Why is He not landing in force, invading it? Is it dial He is not strong enough? Well, Christians think He is going to land in force; we do not know when. But we can guess why He is delaying. He wants to give us the chance of joining His side freely. I do not suppose you and I would have thought much of a Frenchman who waited till the Allies were marching into Germany and then announced he was on our side. God will invade. But I wonder whether people who ask God to interfere openly and directly in our world quite realise what it will be like when He does. When that happens, it is the end of the world. When the author walks on to the stage the play is over. God is going to invade, all right: but what is the good of saying you are on His side then, when you see the whole natural universe melting away like a dream and something else-something it never entered your head to conceive-comes crashing in; something so beautiful to some of us and so terrible to others that none of us will have any choice left? For this time it will be God without disguise; something so overwhelming that it will strike either irresistible love or irresistible horror into every creature. It will be too late then to choose your side. There is no use saying you choose to lie down when it has become impossible to stand up. That will not be the time for choosing: it will be the time when we discover which side we really have chosen, whether we realised it before or not. Now, today, this moment, is our chance to choose the right side. God is holding back to give us that chance. It will not last for ever. We must take it or leave it.</p>
+</article></body>

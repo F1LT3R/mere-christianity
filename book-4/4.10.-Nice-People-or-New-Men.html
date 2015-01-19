@@ -1,0 +1,557 @@
+<!DOCTYPE html><head><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+body .markdown-body {
+  padding: 30px;
+}
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.markdown-body a {
+  background: transparent;
+}
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+.markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.markdown-body img {
+  border: 0;
+}
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.markdown-body pre {
+  overflow: auto;
+}
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+.markdown-body input {
+  line-height: normal;
+}
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.markdown-body h1 {
+  font-size: 30px;
+}
+.markdown-body h2 {
+  font-size: 21px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14px;
+}
+.markdown-body h5 {
+  font-size: 12px;
+}
+.markdown-body h6 {
+  font-size: 11px;
+}
+.markdown-body blockquote {
+  margin: 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+.markdown-body dd {
+  margin-left: 0;
+}
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li > p {
+  margin-top: 16px;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-body table th {
+  font-weight: bold;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+.markdown-body .pl-c {
+  color: #969896;
+}
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.markdown-body .pl-mq {
+  color: #008080;
+}
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+.file {
+  list-style-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/file-16.png');
+}
+.dir {
+  list-style-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/699086-icon-94-folder-16.png');
+}
+.md {
+  list-style-image: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-16.png');
+}
+</style></head><body><article><h1 id="mere-christianity">Mere Christianity</h1>
+<p>by C. S. Lewis</p>
+<h2 id="4-beyond-personality-or-first-steps-in-the-doctrine-of-the-trinity">4. Beyond Personality: Or First Steps In The Doctrine Of The Trinity</h2>
+<h3 id="4-10-nice-people-or-new-men">4.10. Nice People Or New Men</h3>
+<p>He meant what He said. Those who put themselves in His hands will become perfect, as He is perfect-perfect in love, wisdom, joy, beauty, and immortality. The change will not be completed in this life, for death is an important part of the treatment. How far the change will have gone before death in any particular Christian is uncertain.</p>
+<p>I think this is the right moment to consider a question which is often asked: If Christianity is true why are not all Christians obviously nicer than all non-Christians? What lies behind that question is partly something very reasonable and partly something that is not reasonable at all. The reasonable part is this. If conversion to Christianity makes no improvement in a man&apos;s outward actions -if he continues to be just as snobbish or spiteful or envious or ambitious as he was before-then I think we must suspect that his &quot;conversion&quot; was largely imaginary; and after one&apos;s original conversion, every time one thinks one has made an advance, that is the test to apply. Fine feelings, new insights, greater interest in &quot;religion&quot; mean nothing unless they make our actual behaviour better; just as in an illness &quot;feeling better&quot; is not much good if the thermometer shows that your temperature is still going up. In that sense the outer world is quite right to judge Christianity by its results. Christ told us to judge by results. A tree is known by its fruit; or, as we say, the proof of the pudding is in the eating. When we Christians behave badly, or fail to behave well, we are making Christianity unbelievable to the outside world. The wartime posters told us that Careless Talk costs Lives. It is equally true that Careless Lives cost Talk. Our careless lives set the outer world talking; and we give them grounds for talking in a way that throws doubt on the truth of Christianity itself.</p>
+<p>But there is another way of demanding results in which the outer world may be quite illogical. They may demand not merely that each man&apos;s life should improve if he becomes a Christian: they may also demand before they believe in Christianity that they should see the whole world neatly divided into two camps -Christian and non-Christian-and that all the people in the first camp at any given moment should be obviously nicer than all the people in the second. This is unreasonable on several grounds.</p>
+<p>(1) In the first place the situation in the actual world is much more complicated than that. The world does not consist of 100 per cent Christians and 100 per cent non-Christians. There are people (a great many of them) who are slowly ceasing to be Christians but who still call themselves by that name: some of them are clergymen. There are other people who are slowly becoming Christians though they do not yet call themselves so. There are people who do not accept the full Christian doctrine about Christ but who are so strongly attracted by Him that they are His in a much deeper sense than they themselves understand. There are people in other religions who are being led by God&apos;s secret influence to concentrate on those parts of their religion which are in agreement with Christianity, and who thus belong to Christ without knowing it. For example, a Buddhist of good will may be led to concentrate more and more on the Buddhist teaching about mercy and to leave in the background (though he might still say he believed) the Buddhist teaching on certain other points. Many of the good Pagans long before Christ&apos;s birth may have been in this position. And always, of course, there are a great many people who are just confused in mind and have a lot of inconsistent beliefs all jumbled up together. Consequently, it is not much use trying to make judgments about Christians and non-Christians in the mass. It is some use comparing cats and dogs, or even men and women, in the mass, because there one knows definitely which is which. Also, an animal does not turn (either slowly or suddenly) from a dog into a cat. But when we are comparing Christians in general with non-Christians in general, we are usually not thinking about real people whom we know at all, but only about two vague ideas which we have got from novels and newspapers. If you want to compare the bad Christian and the good Atheist, you must think about two real specimens whom you have actually met. Unless we come down to brass tacks in that way, we shall only be wasting time.</p>
+<p>(2) Suppose we have come down to brass tacks and are now talking not about an imaginary Christian and an imaginary non-Christian, but about two real people in our own neighbourhood. Even then we must be careful to ask the right question. If Christianity is true then it ought to follow (a) That any Christian will be nicer than the same person would be if he were not a Christian. (b) That any man who becomes a Christian will be nicer than he was before. Just in the same way, if the advertisements of White-smile&apos;s toothpaste are true it ought to follow (a) That anyone who uses it will have better teeth than the same person would have if he did not use it. (b) That if anyone begins to use it his teeth will improve. But to point out that I, who use Whitesmile&apos;s (and also have inherited bad teeth from both my parents), have not got as fine a set as some healthy young Negro who never used toothpaste at all, does not, by itself, prove that the advertisements are untrue. Christian Miss Bates may have an unkinder tongue than unbelieving Dick Firkin. That, by itself, does not tell us whether Christianity works. The question is what Miss Bates&apos;s tongue would be like if she were not a Christian and what Dick&apos;s would be like if he became one. Miss Bates and Dick, as a result of natural causes and early upbringing, have certain temperaments: Christianity professes to put both temperaments under new management if they will allow it to do so. What you have a right to ask is whether that management, if allowed to take over, improves the concern. Everyone knows that what is being managed in Dick Firkin&apos;s case is much &quot;nicer&quot; than what is being managed in Miss Bates&apos;s. That is not the point. To judge the management of a factory, you must consider not only the output but the plant. Considering the plant at Factory A it may be a wonder that it turns out anything at all; considering the first-class outfit at Factory B its output, though high, may be a great deal lower than it ought to be. No doubt the good manager at Factory A is going to put in new machinery as soon as he can, but that takes time. In the meantime low output does not prove that he is a failure.</p>
+<p>(3) And now, let us go a little deeper. The manager is going to put in new machinery: before Christ has finished with Miss Bates, she is going to be very &quot;nice&quot; indeed. But if we left it at that, it would sound as though Christ&apos;s only aim was to pull Miss Bates up to the same level on which Dick had been all along. We have been talking, in fact, as if Dick were all right; as if Christianity was something nasty people needed and nice ones could afford to do without; and as if niceness was all that God demanded. But this would be a fatal mistake. The truth is that in God&apos;s eyes Dick Firkin needs &quot;saving&quot; every bit as much as Miss Bates. In one sense (I will explain what sense in a moment) niceness hardly comes into the question.</p>
+<p>You cannot expect God to look at Dick&apos;s placid temper and friendly disposition exactly as we do. They result from natural causes which God Himself creates. Being merely temperamental, they will all disappear if Dick&apos;s digestion alters. The niceness, in fact, is God&apos;s gift to Dick, not Dick&apos;s gift to God. In the same way, God has allowed natural causes, working in a world spoiled by centuries of sin, to produce in Miss Bates the narrow mind and jangled nerves which account for most of her nastiness. He intends, in His own good time, to set that part of her right. But that is not, for God, the critical part of the business. It presents no difficulties. It is not what He is anxious about. What He is watching and waiting and working for is something that is not easy even for God, because, from the nature of the case, even He cannot produce it by a mere act of power. He is waiting and watching for it both in Miss Bates and in Dick Firkin. It is something they can freely give Him or freely refuse to Him. Will they, or will they not, turn to Him and thus fulfil the only purpose for which they were created? Their free will is trembling inside them like the needle of a compass. But this is a needle that can choose. It can point to its true North; but it need not. Will the needle swing round, and settle, and point to God?</p>
+<p>He can help it to do so. He cannot force it. He cannot, so to speak, put out His own hand and pull it into the right position, for then it would not be free will any more. Will it point North? That is the question on which all hangs. Will Miss Bates and Dick offer their natures to God? The question whether the natures they offer or withhold are, at that moment, nice or nasty ones, is of secondary importance. God can see to that part of the problem.</p>
+<p>Do not misunderstand me. Of course God regards a nasty nature as a bad and deplorable thing. And, of course, He regards a nice nature as a good thing-good like bread, or sunshine, or water. But these are the good things which He gives and we receive. He created Dick&apos;s sound nerves and good digestion, and there is plenty more where they came from. It costs God nothing, so far as we know, to create nice things: but to convert rebellious wills cost Him crucifixion. And because they are wills they can-in nice people just as much as in nasty ones-refuse His request. And then, because that niceness in Dick was merely part of nature, it will all go to pieces in the end. Nature herself will all pass away. Natural causes come together in Dick to make a pleasant psychological pattern, just as they come together in a sunset to make a pleasant pattern of colours. Presently (for that is how nature works) they will fall apart again and the pattern in both cases will disappear. Dick has had the chance to turn (or rather, to allow God to turn) that momentary pattern into the beauty of an eternal spirit: and he has not taken it.</p>
+<p>There is a paradox here. As long as Dick does not turn to God, he thinks his niceness is his own, and just as long as he thinks that, it is not his own. It is when Dick realises that his niceness is not his own but a gift from God, and when he offers it back to God- it is just then that it begins to be really his own. For now Dick is beginning to take a share in his own creation. The only things we can keep are the things we freely give to God. What we try to keep for ourselves is just what we are sure to lose.</p>
+<p>We must, therefore, not be surprised if we find among the Christians some people who are still nasty. There is even, when you come to think it over, a reason why nasty people might be expected to turn to Christ in greater numbers than nice ones. That was what people objected to about Christ during His life on earth: He seemed to attract &quot;such awful people.&quot; That is what people still object to, and always will. Do you not see why? Christ said &apos;&quot;Blessed are the poor&quot; and &quot;How hard it is for the rich to enter the Kingdom,&quot; and no doubt He primarily meant the economically rich and economically poor. But do not His words also apply to another kind of riches and poverty? One of the dangers of having a lot of money is that you may be quite satisfied with the kinds of happiness money can give and so fail to realise your need for God. If everything seems to come simply by signing checks, you may forget that you are at every moment totally dependent on God. Now quite plainly, natural gifts carry with them a similar danger. If you have sound nerves and intelligence and health and popularity and a good upbringing, you are likely to be quite satisfied with your character as it is. &quot;Why drag God into it?&quot; you may ask. A certain level of good conduct comes fairly easily to you. You are not one of those wretched creatures who are always being tripped up by sex, or dipsomania, or nervousness, or bad temper. Everyone says you are a nice chap and (between ourselves) you agree with them. You are quite likely to believe dial all this niceness is your own doing: and you may easily not feel the need for any better kind of goodness. Often people who have all these natural kinds of goodness cannot be brought to recognise their need for Christ at all until, one day, the natural goodness lets them down and their self-satisfaction is shattered. In other words, it is hard for those who are &quot;rich&quot; in this sense to enter the Kingdom.</p>
+<p>It is very different for the nasty people-the little, low, timid, warped, thin-blooded, lonely people, or the passionate, sensual, unbalanced people. If they make any attempt at goodness at all, they learn, in double quick time, that they need help. It is Christ or nothing for them. It is taking up the cross and following-or else despair. They are the lost sheep; He came specially to find them. They are (in one very real and terrible sense) the &quot;poor&quot;: He blessed them. They are the &quot;awful set&quot; he goes about with-and of course the Pharisees say still, as they said from the first, &quot;If there were anything in Christianity those people would not be Christians.&quot;</p>
+<p>There is either a warning or an encouragement here for every one of us. If you are a nice person-if virtue comes easily to you beware! Much is expected from those to whom much is given. If you mistake for your own merits what are really God&apos;s gifts to you through nature, and if you are contented with simply being nice, you are still a rebel: and all those gifts will only make your fall more terrible, your corruption more complicated, your bad example more disastrous. The Devil was an archangel once; his natural gifts were as far above yours as yours are above those of a chimpanzee.</p>
+<p>But if you are a poor creature-poisoned by a wretched upbringing in some house full of vulgar jealousies and senseless quarrels-saddled, by no choice of your own, with some loathsome sexual perversion-nagged day in and day out by an inferiority complex that makes you snap at your best friends-do not despair. He knows all about it. You are one of the poor whom He blessed. He knows what a wretched machine you are trying to drive. Keep on. Do what you can. One day (perhaps in another world, but perhaps far sooner than that) he will fling it on the scrap-heap and give you a new one. And then you may astonish us all-not least yourself: for you have learned your driving in a hard school. (Some of the last will be first and some of the first will be last.)</p>
+<p>&quot;Niceness&quot;-wholesome, integrated personality-is an excellent thing. We must try by every medical, educational, economic, and political means in our power, to produce a world where as many people as possible grow up &quot;nice&quot;; just as we must try to produce a world where all have plenty to eat. But we must not suppose that even if we succeeded in making everyone nice we should have saved their souls. A world of nice people, content in their own niceness, looking no further, turned away from God, would be just as desperately in need of salvation as a miserable world-and might even be more difficult to save.</p>
+<p>For mere improvement is not redemption, though redemption always improves people even here and now and will, in the end, improve them to a degree we cannot yet imagine. God became man to turn creatures into sons: not simply to produce better men of the old kind but to produce a new kind of man. It is not like teaching a horse to jump better and better but like turning a horse into a winged creature. Of course, once it has got its wings, it will soar over fences which could never have been jumped and thus beat the natural horse at its own game. But there may be a period, while the wings are just beginning to grow, when it cannot do so: and at that stage the lumps on the shoulders-no one could tell by looking at them that they are going to be wings-may even give it an awkward appearance.</p>
+<p>But perhaps we have already spent too long on this question. If what you want is an argument against Christianity (and I well remember how eagerly I looked for such arguments when I began to be afraid it was true) you can easily find some stupid and unsatisfactory Christian and say, &quot;So there&apos;s your boasted new man! Give me the old kind.&quot; But if once you have begun to see that Christianity is on other grounds probable, you will know in your heart that this is only evading the issue. What can you ever really know of other people&apos;s souls-of their temptations, their opportunities, their struggles? One soul in the whole creation you do know: and it is the only one whose fate is placed in your hands. If there is a God, you are, in a sense, alone with Him. You cannot put Him off with speculations about your next door neighbours or memories of what you have read in books. What will all that chatter and hearsay count (will you even be able to remember it?) when the anaesthetic fog which we call &quot;nature&quot; or &quot;the real world&quot; fades away and the Presence in which you have always stood becomes palpable, immediate, and unavoidable?</p>
+</article></body>

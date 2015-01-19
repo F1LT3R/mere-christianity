@@ -1,0 +1,554 @@
+<!DOCTYPE html><head><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+body .markdown-body {
+  padding: 30px;
+}
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.markdown-body a {
+  background: transparent;
+}
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+.markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.markdown-body img {
+  border: 0;
+}
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.markdown-body pre {
+  overflow: auto;
+}
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+.markdown-body input {
+  line-height: normal;
+}
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.markdown-body h1 {
+  font-size: 30px;
+}
+.markdown-body h2 {
+  font-size: 21px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14px;
+}
+.markdown-body h5 {
+  font-size: 12px;
+}
+.markdown-body h6 {
+  font-size: 11px;
+}
+.markdown-body blockquote {
+  margin: 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+.markdown-body dd {
+  margin-left: 0;
+}
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li > p {
+  margin-top: 16px;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-body table th {
+  font-weight: bold;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+.markdown-body .pl-c {
+  color: #969896;
+}
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.markdown-body .pl-mq {
+  color: #008080;
+}
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+.file {
+  list-style-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/file-16.png');
+}
+.dir {
+  list-style-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/699086-icon-94-folder-16.png');
+}
+.md {
+  list-style-image: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-16.png');
+}
+</style></head><body><article><h1 id="mere-christianity">Mere Christianity</h1>
+<p>by C. S. Lewis</p>
+<h2 id="4-beyond-personality-or-first-steps-in-the-doctrine-of-the-trinity">4. Beyond Personality: Or First Steps In The Doctrine Of The Trinity</h2>
+<h1 id="4-11-the-new-men">4.11. The New Men</h1>
+<p>In the last chapter I compared Christ&apos;s work of making New Men to the process of turning a horse into a winged creature. I used that extreme example in order to emphasise the point that it is not mere improvement but Transformation. The nearest parallel to it in the world of nature is to be found in the remarkable transformations we can make in insects by applying certain rays to them. Some people think this is how Evolution worked. The alterations in creatures on which it all depends may have been produced by rays coming from outer space. (Of course once the alterations are there, what they call &quot;Natural Selection&quot; gets to work on them: i.e., the useful alterations survive and the other ones get weeded out.)</p>
+<p>Perhaps a modern man can understand the Christian idea best if he takes it in connection with Evolution. Everyone now knows about Evolution (though, of course, some educated people disbelieve it): everyone has been told that man has evolved from lower types of life. Consequently, people often wonder &quot;What is the next step? When is the thing beyond man going to appear?&quot; Imaginative writers try sometimes to picture this next step-the &quot;Superman&quot; as they call him; but they usually only succeed in picturing someone a good deal nastier than man as we know him and then try to make up for that by sticking on extra legs or arms. But supposing the next step was to be something even more different from the earlier steps than they ever dreamed of? And is it not very likely it would be? Thousands of centuries ago huge, very heavily armoured creatures were evolved. If anyone had at that time been watching the course of Evolution he would probably have expected that it was going to go on to heavier and heavier armour. But he would have been wrong. The future had a card up its sleeve which nothing at that time would have led him to expect. It was going to spring on him little, naked, unarmoured animals which had better brains: and with those brains they were going to master the whole planet. They were not merely going to have more power than the prehistoric monsters, they were going to have a new kind of power. The next step was not only going to be different, but different with a new kind of difference. The stream of Evolution was not going to flow on in the direction in which he saw it flowing: it was in fact going to take a sharp bend.</p>
+<p>Now it seems to me that most of the popular guesses at the Next Step are making just the same sort of mistake. People see (or at any rate they think they see) men developing greater brains and getting greater mastery over nature. And because they think the stream is flowing in that direction, they imagine it will go on flowing in that direction. But I cannot help thinking that the Next Step will be really new; it will go off in a direction you could never have dreamed of. It would hardly be worth calling a New Step unless it did. I should expect not merely difference but a new kind of difference. I should expect not merely change but a new method of producing the change. Or, to make an Irish bull, I should expect the next stage in Evolution not to be a stage in Evolution at all: should expect the Evolution itself as a method of producing change, will be superseded. And finally, I should not be surprised if, when the thing happened, very few people noticed that it was happening.</p>
+<p>Now, if you care to talk in these terms, the Christian view is precisely that the Next Step has already appeared. And it is really new. It is not a change from brainy men to brainier men: it is a change that goes off in a totally different direction-a change from being creatures of God to being sons of God. The first instance appeared in Palestine two thousand years ago. In a sense, the change is not &quot;Evolution&quot; at all, because it is not something arising out of the natural process of events but something coming into nature from outside. But that is what I should expect. We arrived at our idea of &quot;Evolution&quot; from studying the past. If there are real novelties in store then of course our idea, based on the past, will not really cover them. And in fact this New Step differs from all previous ones not only in coming from outside nature but in several other ways as well.</p>
+<p>(1) It is not carried on by sexual reproduction. Need we be surprised at that? There was a time before sex had appeared; development used to go on by different methods. Consequently, we might have expected that there would come a time when sex disappeared, or else (which is what is actually happening) a time when sex, though it continued to exist, ceased to be the main channel of development.</p>
+<p>(2) At the earlier stages living organisms have had either no choice or very little choice about taking the new step. Progress was, in the main, something that happened to them, not something that they did. But the new step, the step from being creatures to being sons, is voluntary. At least, voluntary in one sense. It is not voluntary in the sense that we, of ourselves, could have chosen to take it or could even have imagined it; but it is voluntary in the sense that when it is offered to us we can refuse it. We can, if we please, shrink back: we can dig in our heels and let the new Humanity go on without us.</p>
+<p>(3) I have called Christ the &quot;first instance&quot; of the new man. But of course He is something much more than that. He is not merely a new man, one specimen of the species, but the new man. He is the origin and centre and life of all the new men. He came into the created universe, of His own will, bringing with Him the Zoe, the new life. (I mean new to us, of course: in its own place Zoe has existed for ever and ever.) And He transmits it not by heredity but by what I have called &quot;good infection.&quot; Everyone who gets it gets it by personal contact with Him. Other men become &quot;new&quot; by being &quot;in Him.&quot;</p>
+<p>(4) This step is taken at a different speed from the previous ones. Compared with the development of man on this planet, the diffusion of Christianity over the human race seems to go like a flash of lightning-for two thousand years is almost nothing in the history of the universe. (Never forget that we are all still &quot;the early Christians.&quot; The present wicked and wasteful divisions between us are, let us hope, a disease of infancy: we are still teething. The outer world, no doubt, thinks just the opposite. It thinks we are dying of old age. But it has thought that so often before! Again and again it has thought Christianity was dying, dying by persecutions from without or corruptions from within, by the rise of Mohammedanism, the rise of the physical sciences, the rise of great anti-Christian revolutionary movements. But every time the world has been disappointed. Its first disappointment was over the crucifixion. The Man came to life again. In a sense-and I quite realise how frightfully unfair it must seem to them-that has been happening ever since. They keep on killing the thing that He started: and each time, just as they are patting down the earth on its grave, they suddenly hear that it is still alive and has even broken out in some new place. No wonder they hate us!</p>
+<p>(5) The stakes are higher. By falling back at the earlier steps a creature lost, at the worst, its few years of life on this earth: very often it did not lose even that. By falling back at this step we lose a prize which is (in the strictest sense of the word) infinite. For now the critical moment has arrived. Century by century God has guided nature up to the point of producing creatures which can (if they will) be taken right out of nature, turned into &quot;gods.&quot; Will they allow themselves to be taken? In a way, it is like the crisis of birth. Until we rise and follow Christ we are still parts of Nature, still in the womb of our great mother. Her pregnancy has been long and painful and anxious, but it has reached its climax. The great moment has come. Everything is ready. The Doctor has arrived. Will the birth &quot;go off all right&quot;? But of course it differs from an ordinary birth in one important respect. In an ordinary birth the baby has not much choice: here it has. I wonder what an ordinary baby would do if it had the choice. It might prefer to stay in the dark and warmth and safety of the womb. For of course it would think the womb meant safety. That would be just where it was wrong; for if it stays there it will die.</p>
+<p>On this view the thing has happened: the new step has been taken and is being taken. Already the new men are dotted here and there all over the earth. Some, as I have admitted, are still hardly recognisable: but others can be recognised. Every now and then one meets them. Their very voices and faces are different from ours; stronger, quieter, happier, more radiant. They begin where most of us leave off. They are, I say, recognisable; but you must know what to look for. They will not be very like the idea of &quot;religious people&quot; which you have formed from your general reading. They do not draw attention to themselves. You tend to think that you are being kind to them when they are really being kind to you. They love you more than other men do, but they need you less. (We must get over wanting to be needed: in some goodish people, specially women, that is the hardest of all temptations to resist.) They will usually seem to have a lot of time: you will wonder where it comes from. When you have recognised one of them, you will recognise the next one much more easily. And I strongly suspect (but how should I know?) that they recognise one another immediately and infallibly, across every barrier of colour, sex, class, age, and even of creeds. In that way, to become holy is rather like joining a secret society. To put it at the very lowest, it must be great fun.</p>
+<p>But you must not imagine that the new men are, in the ordinary sense, all alike. A good deal of what I have been saying in this last book might make you suppose that that was bound to be so. To become new men means losing what we now call &quot;ourselves.&quot; Out of ourselves, into Christ, we must go. His will is to become ours and we are to think His thoughts, to &quot;have the mind of Christ&quot; as the Bible says. And if Christ is one, and if He is thus to be &quot;in&quot; us all, shall we not be exactly the same? It certainly sounds like it; but in fact it is not so.</p>
+<p>It is difficult here to get a good illustration; because, of course, no other two things are related to each other just as the Creator is related to one of His creatures. But I will try two very imperfect illustrations which may give a hint of the truth. Imagine a lot of people who have always lived in the dark. You come and try to describe to them what light is like. You might tell them that if they come into the light that same light would fall on them all and they would all reflect it and thus become what we call visible. Is it not quite possible that they would imagine that, since they were all receiving the same light, and all reacting to it in the same way (i.e., all reflecting it), they would all look alike? Whereas you and I know that the light will in fact bring out, or show up, how different they are. Or again, suppose a person who knew nothing about salt. You give him a pinch to taste and he experiences a particular strong, sharp taste. You then tell him that in your country people use salt in all their cookery. Might he not reply &quot;In that case I suppose all your dishes taste exactly the same: because the taste of that stuff you have just given me is so strong that it will kill the taste of everything else.&quot; But you and I know that the real effect of salt is exactly the opposite. So far from killing the taste of the egg and the tripe and the cabbage, it actually brings it out. They do not show their real taste till you have added the salt. (Of course, as I warned you, this is not really a very good illustration, because you can, after all, kill the other tastes by putting in too much salt, whereas you cannot kill the taste of a human personality by putting in too much Christ. I am doing the best I can.)</p>
+<p>It is something like that with Christ and us. The more we get what we now call &quot;ourselves&quot; out of the way and let Him take us over, the more truly ourselves we become. There is so much of Him that millions and millions of &quot;little Christs,&quot; all different, will still be too few to express Him fully. He made them all. He invented-as an author invents characters in a novel-all the different men that you and I were intended to be. In that sense our real selves are all waiting for us in Him. It is no good trying to &quot;be myself&quot; without Him. The more I resist Him and try to live on my own, the more I become dominated by my own heredity and upbringing and surroundings and natural desires. In fact what I so proudly call &quot;Myself&quot; becomes merely the meeting place for trains of events which I never started and which I cannot stop. What I call &quot;My wishes&quot; become merely the desires thrown up by my physical organism or pumped into me by other men&apos;s thoughts or even suggested to me by devils. Eggs and alcohol and a good night&apos;s sleep will be the real origins of what I flatter myself by regarding as my own highly personal and discriminating decision to make love to the girl opposite to me in the railway carriage. Propaganda will be the real origin of what I regard as my own personal political ideals, I am not, in my natural state, nearly so much of a person as I like to believe: most of what I call &quot;me&quot; can be very easily explained. It is when I turn to Christ, when I give myself up to His Personality, that I first begin to have a real personality of my own. At the beginning I said there were Personalities in God. I will go further now. There are no real personalities anywhere else. Until you have given up your self to Him you will not have a real self. Sameness is to be found most among the most &quot;natural&quot; men, not among those who surrender to Christ. How monotonously alike all the great tyrants and conquerors have been: how gloriously different are the saints.</p>
+<p>But there must be a real giving up of the self. You must throw it away &quot;blindly&quot; so to speak. Christ will indeed give you a real personality: but you must not go to Him for the sake of that. As long as your own personality is what you are bothering about you are not going to Him at all. The very first step is to try to forget about the self altogether. Your real, new self (which is Christ&apos;s and also yours, and yours just because it is His) will not come as long as you are looking for it. It will come when you are looking for Him. Does that sound strange? The same principle holds, you know, for more everyday matters. Even in social life, you will never make a good impression on other people until you stop thinking about what sort of impression you are making. Even in literature and art, no man who bothers about originality will ever be original: whereas if you simply try to tell the truth (without caring twopence how often it has been told before) you will, nine times out of ten, become original without ever having noticed it. The principle runs through all life from top to bottom. Give up your self, and you will find your real self. Lose your life and you will save it. Submit to death, death of your ambitions and favourite wishes every day and death of your whole body in the end: submit with every fibre of your being, and you will find eternal life. Keep back nothing. Nothing that you have not given away will ever be really yours. Nothing in you that has not died will ever be raised from the dead. Look for yourself, and you will find in the long run only hatred, loneliness, despair, rage, ruin, and decay. But look for Christ and you will find Him, and with Him everything else thrown in.</p>
+</article></body>

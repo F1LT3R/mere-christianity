@@ -1,0 +1,691 @@
+<!DOCTYPE html><head><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+body .markdown-body {
+  padding: 30px;
+}
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.markdown-body a {
+  background: transparent;
+}
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+.markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.markdown-body img {
+  border: 0;
+}
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.markdown-body pre {
+  overflow: auto;
+}
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+.markdown-body input {
+  line-height: normal;
+}
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.markdown-body h1 {
+  font-size: 30px;
+}
+.markdown-body h2 {
+  font-size: 21px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14px;
+}
+.markdown-body h5 {
+  font-size: 12px;
+}
+.markdown-body h6 {
+  font-size: 11px;
+}
+.markdown-body blockquote {
+  margin: 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+.markdown-body dd {
+  margin-left: 0;
+}
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li > p {
+  margin-top: 16px;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-body table th {
+  font-weight: bold;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+.markdown-body .pl-c {
+  color: #969896;
+}
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.markdown-body .pl-mq {
+  color: #008080;
+}
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+.file {
+  list-style-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/file-16.png');
+}
+.dir {
+  list-style-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/699086-icon-94-folder-16.png');
+}
+.md {
+  list-style-image: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-16.png');
+}
+</style></head><body><article><h1 id="mere-christianity">Mere Christianity</h1>
+<p><a href="https://github.com/F1LT3R/mere-christianity/blob/master/Mere-Christianity-C.-S.-Lewis.-Full-Book.md">Mere Christianity - by C. S. Lewis, (Complete Text)</a></p>
+<p><strong>In this resource:</strong></p>
+<ul>
+<li>Text by Book</li>
+<li>Text by Chapter</li>
+<li>Audio by Chapter</li>
+<li>Chapters by PDF (2-by-2)</li>
+<li>Additional Resources</li>
+<li>Supplemental Information</li>
+</ul>
+<h2 id="contents">Contents</h2>
+<p>Mere Christianity is comprised of 4 small books, most of which were radio broadcasts during WWII. Unfortunately only one of these original radio broadcasts survives to this day.</p>
+<h3 id="the-complete-text">The Complete Text</h3>
+<p><a href="https://github.com/F1LT3R/mere-christianity/blob/master/Mere-Christianity-C.-S.-Lewis.-Full-Book.md">Mere Christianity - by C. S. Lewis</a></p>
+<h3 id="text-by-book">Text by Book</h3>
+<ol>
+<li><a href="Mere-Christianity-Book-1.-Right-&amp;-Wrong-as-a-Clue-to-The-Meaning-of-The-Universe.md.html">Right &amp; Wrong as a Clue to The Meaning of The Universe</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-2/Mere-Christianity-Book-2.-What-Christians-Believe.md">What Christian&apos;s Believe</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/Mere-Christianity-Book-3.-Christian-Behaviour.md">Christian Behaviour</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/Mere-Christianity-Book-4.-Beyond-Personality.md">Beyond Personality: Or First Steps In The Doctrine Of The Trinity</a></li>
+</ol>
+<h3 id="text-by-chapter">Text by Chapter</h3>
+<ol>
+<li>Right &amp; Wrong as a Clue to The Meaning of The Universe<ol>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-1/1.1.-The-Law-of-Human-Nature.md">The Law of Human Nature</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-1/1.2.-Some-Objections.md">Some Objections</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-1/1.3.-The-Reality-of-The-Law.md">The Reality of The Law</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-1/1.4.-What-Lies-Behind-The-Law.md">What Lies Behind The Law</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-1/1.5.-We-Have-Cause-To-Be-Uneasy.md">We Have Cause To Be Uneasy</a></li>
+</ol>
+</li>
+<li>What Christian&apos;s Believe<ol>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-2/2.1.-Rival-Conceptions-of-God.md">Rival Conceptions of God</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-2/2.2.-The-Invasion.md">The Invasion</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-2/2.3.-The-Shocking-Alternative.md">The Shocking Alternative</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-2/2.4.-The-Perfect-Penitent.md">The Perfect Penitent</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-2/2.5.-The-Practical-Conclusion.md">The Practical Conclusion</a></li>
+</ol>
+</li>
+<li>Christian Behavior<ol>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.1.-The-Three-Parts-Of-Morality.md">The Three Parts of Morality</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.2.-The-Cardinal-Virtues.md">The Cardinal Values</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.3.-Social-Morality.md">Social Morality</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.4.-Morality-and-Psychoanalysis.md">Morality and Psychoanalysis</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.5.-Sexual-Morality.md">Sexual Morality</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.6.-Christian-Marriage.md">Christian Marriage</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.7.-Forgivness.md">Forgiveness</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.8.-The-Great-Sin.md">The Great Sin</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.9.-Charity.md">Charity</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.10.-Hope.md">Hope</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.11.-Faith.md">Faith</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-3/3.12.-Faith-In-The-Second-Sense.md">Faith In The Second Sense</a></li>
+</ol>
+</li>
+<li>Beyond Personality: Or First Steps In The Doctrine Of The Trinity<ol>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.1.-Making-and-Begetting.md">Making And Begetting</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.2.-The-Three-Personal-God.md">The Three Personal God</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.3.-Time-and-Beyond-Time.md">Time And Beyond</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.4.-Good-Infection.md">Good Infection</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.5.-The-Obstinate-Toy-Solidiers.md">The Obstinate Toy Solidiers</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.6.-Two-Notes.md">Two Notes</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.7.-Lets-Pretend.md">Let&apos;s Pretend</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.8.-Is-Christianity-Hard-or-Easy.md">Is Christianity Hard or Easy?</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.9.-Counting-The-Cost.md">Counting The Cost</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.10.-Nice-People-or-New-Men.md">Nice People or New Men</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-4/4.11.-The-New-Men.md">The New Men</a></li>
+</ol>
+</li>
+</ol>
+<h3 id="mp3-audio-by-chapter">MP3 Audio by Chapter</h3>
+<ol>
+<li>Right &amp; Wrong as a Clue to The Meaning of The Universe<ol>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-1/1.1.-The-Law-of-Human-Nature.mp3">The Law of Human Nature</a></li>
+<li><a href="https://github.com/F1LT3R/mere-christianity/blob/master/book-1/1.2.-Some-Objections.mp3">Some Objections</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-1/1.3.-The-Reality-of-The-Law.mp3">The Reality of The Law</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-1/1.4.-What-Lies-Behind-The-Law.mp3">What Lies Behind The Law</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-1/1.5.-We-Have-Cause-To-Be-Uneasy.mp3">We Have Cause To Be Uneasy</a></li>
+</ol>
+</li>
+<li>What Christian&apos;s Believe<ol>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-2/2.1.-Rival-Conceptions-of-God.mp3">Rival Conceptions of God</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-2/2.2.-The-Invasion.mp3">The Invasion</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-2/2.3.-The-Shocking-Alternative.mp3">The Shocking Alternative</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-2/2.4.-The-Perfect-Penitent.mp3">The Perfect Penitent</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-2/2.5.-The-Practical-Conclusion.mp3">The Practical Conclusion</a></li>
+</ol>
+</li>
+<li>Christian Behavior<ol>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.1.-The-Three-Parts-Of-Morality.mp3">The Three Parts of Morality</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.2.-The-Cardinal-Virtues.mp3">The Cardinal Values</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.3.-Social-Morality.mp3">Social Morality</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.4.-Morality-and-Psychoanalysis.mp3">Morality and Psychoanalysis</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.5.-Sexual-Morality.mp3">Sexual Morality</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.6.-Christian-Marriage.mp3">Christian Marriage</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.7.-Forgivness.mp3">Forgiveness</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.8.-The-Great-Sin.mp3">The Great Sin</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.9.-Charity.mp3">Charity</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.10.-Hope.mp3">Hope</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.11.-Faith.mp3">Faith</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-3/3.12.-Faith-In-The-Second-Sense.mp3">Faith In The Second Sense</a></li>
+</ol>
+</li>
+<li>Beyond Personality: Or First Steps In The Doctrine Of The Trinity<ol>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.1.-Making-and-Begetting.mp3">Making And Begetting</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.2.-The-Three-Personal-God.mp3">The Three Personal God</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.3.-Time-and-Beyond-Time.mp3">Time And Beyond</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.4.-Good-Infection.mp3">Good Infection</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.5.-The-Obstinate-Toy-Solidiers.mp3">The Obstinate Toy Solidiers</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.6.-Two-Notes.mp3">Two Notes</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.7.-Lets-Pretend.mp3">Let&apos;s Pretend</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.8.-Is-Christianity-Hard-or-Easy.mp3">Is Christianity Hard or Easy?</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.9.-Counting-The-Cost.mp3">Counting The Cost</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.10.-Nice-People-or-New-Men.mp3">Nice People or New Men</a></li>
+<li><a href="https://f1lt3r.github.io/mere-christianity/book-4/4.11.-The-New-Men.mp3">The New Men</a></li>
+</ol>
+</li>
+</ol>
+<h3 id="chapters-by-pdf-2-by-2-">Chapters by PDF (2-by-2)</h3>
+<p>Coming Soon...</p>
+<h2 id="additional-resources">Additional Resources</h2>
+<h3 id="audio">Audio</h3>
+<h4 id="c-s-lewis-s-only-surviving-bbc-radio-address">C.S Lewis&apos;s (only) Surviving BBC Radio Address</h4>
+<p><a href="https://www.youtube.com/watch?v=JHxs3gdtV8A"><img src="https://i.ytimg.com/vi/JHxs3gdtV8A/mqdefault.jpg" alt="C.S Lewis&apos;s surviving BBC radio address"></a>
+<a href="https://www.youtube.com/watch?v=JHxs3gdtV8A">https://www.youtube.com/watch?v=JHxs3gdtV8A</a></p>
+<p>The lone surviving reel of audio with Lewis&apos;s voice on it. He deals with prayer and evolution (Evolution on the second installment). Recorded during WW ll these talks eventually became &quot;Mere Christianity&quot;</p>
+<h3 id="video">Video</h3>
+<h4 id="mere-christianity-by-c-s-lewis-doodle">Mere Christianity by C.S. Lewis Doodle</h4>
+<p><a href="http://www.youtube.com/watch?v=l_VYCqCexow"><img src="https://i.ytimg.com/vi/l_VYCqCexow/mqdefault.jpg" alt="Mere Christianity by C.S. Lewis Doodle"></a>
+<a href="http://www.youtube.com/watch?v=l_VYCqCexow">http://www.youtube.com/watch?v=l_VYCqCexow</a></p>
+<blockquote>
+<p>Broadcast #2 of Lewis&apos; BBC radio series. This talk was called &apos;Some Objections...&apos;</p>
+</blockquote>
+<p>The audio is taken from a reading Book 1, Chapter 2 &apos;Some Objections&apos;. The recording is not actually C. S. Lewis&apos; original voice. :(</p>
+<h4 id="the-law-of-nature-by-c-s-lewis-doodle">The Law Of Nature by C.S. Lewis Doodle</h4>
+<p><a href="https://www.youtube.com/watch?v=_20yiBQAIlk"><img src="https://i.ytimg.com/vi_webp/_20yiBQAIlk/mqdefault.webp" alt="The Law Of Nature by C.S. Lewis Doodle"></a>
+<a href="https://www.youtube.com/watch?v=_20yiBQAIlk">https://www.youtube.com/watch?v=_20yiBQAIlk</a></p>
+<h4 id="sexual-morality-by-c-s-lewis-doodle">Sexual Morality by C.S. Lewis Doodle</h4>
+<p><a href="https://www.youtube.com/watch?v=XBp8M8M4DMs"><img src="https://i.ytimg.com/vi_webp/XBp8M8M4DMs/mqdefault.webp" alt="The Law Of Nature by C.S. Lewis Doodle"></a>
+<a href="https://www.youtube.com/watch?v=XBp8M8M4DMs">https://www.youtube.com/watch?v=XBp8M8M4DMs</a></p>
+<p>*Essay also known as &apos;We Have No (Unlimited) Right to Happiness&apos;. A live animation of a C.S. Lewis essay in the artistic style of my desk lamp. Is that wrong? Written to a secular audience in 1963. Full audio available here:</p>
+<h4 id="-right-wrong-a-clue-to-the-meaning-of-the-universe-by-c-s-lewis-doodle">&apos;Right &amp; Wrong&apos; - A Clue To The Meaning Of The Universe by C.S. Lewis Doodle</h4>
+<p><a href="https://www.youtube.com/watch?v=QmHXYhpEDfM"><img src="https://i.ytimg.com/vi/QmHXYhpEDfM/mqdefault.jpg" alt="&apos;Right &amp; Wrong&apos; - A Clue To The Meaning Of The Universe by C.S. Lewis Doodle"></a>
+<a href="https://www.youtube.com/watch?v=QmHXYhpEDfM">https://www.youtube.com/watch?v=QmHXYhpEDfM</a></p>
+<p>A recreation of the original broadcast talk made by C.S. Lewis during World War II. This broadcast formed the basis of Chapter One of the book &quot;Mere Christianity&quot;. </p>
+<h4 id="the-origin-or-1-2-3-4-of-christianity-by-c-s-lewis-doodle">The Origin (or 1,2,3,4.) of Christianity by C.S. Lewis Doodle</h4>
+<p><a href="https://www.youtube.com/watch?v=tw9biRRv_bM"><img src="https://i.ytimg.com/vi/tw9biRRv_bM/mqdefault.jpg" alt="&apos;Right &amp; Wrong&apos; - A Clue To The Meaning Of The Universe by C.S. Lewis Doodle"></a>
+<a href="https://www.youtube.com/watch?v=tw9biRRv_bM">https://www.youtube.com/watch?v=tw9biRRv_bM</a></p>
+<h2 id="supplemental-information">Supplemental Information</h2>
+<h3 id="about-this-repository">About This Repository</h3>
+<p>This repository was creates as a study-resource for the book Mere Christianity. It is meant to be used to study Mere Christianity at the rate of about 2 Chapters per week. It does not contain a study-guide as such, yet; but I may add this later if we decide to write one. Do you have one you would like to add to this resource? (Pull requests welcome.)</p>
+<p>Currently we are using a Study Guide we found on Amazon, which seems to be fairly up-to-date and fairly relevant to the social climate of 2014: <a href="http://www.amazon.com/Mere-Christianity-Discussion-Study-Guide/dp/1479169838">http://www.amazon.com/Mere-Christianity-Discussion-Study-Guide/dp/1479169838</a></p>
+<h3 id="mere-christianity-facts">Mere Christianity Facts</h3>
+<p>The book contains approximately 63,000 words (I made it 63,365 including titles.)</p>
+<p>More to follow!!</p>
+</article></body>

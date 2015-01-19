@@ -1,0 +1,552 @@
+<!DOCTYPE html><head><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+body .markdown-body {
+  padding: 30px;
+}
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.markdown-body a {
+  background: transparent;
+}
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+.markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.markdown-body img {
+  border: 0;
+}
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.markdown-body pre {
+  overflow: auto;
+}
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+.markdown-body input {
+  line-height: normal;
+}
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.markdown-body h1 {
+  font-size: 30px;
+}
+.markdown-body h2 {
+  font-size: 21px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14px;
+}
+.markdown-body h5 {
+  font-size: 12px;
+}
+.markdown-body h6 {
+  font-size: 11px;
+}
+.markdown-body blockquote {
+  margin: 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+.markdown-body dd {
+  margin-left: 0;
+}
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li > p {
+  margin-top: 16px;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-body table th {
+  font-weight: bold;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+.markdown-body .pl-c {
+  color: #969896;
+}
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.markdown-body .pl-mq {
+  color: #008080;
+}
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+.file {
+  list-style-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/file-16.png');
+}
+.dir {
+  list-style-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/699086-icon-94-folder-16.png');
+}
+.md {
+  list-style-image: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-16.png');
+}
+</style></head><body><article><h1 id="mere-christianity">Mere Christianity</h1>
+<p>by C. S. Lewis</p>
+<h2 id="2-what-christian-s-believe">2. What Christian&apos;s Believe</h2>
+<h3 id="2-2-the-invasion">2.2. The Invasion</h3>
+<p>Very well then, atheism is too simple. And I will tell you another view that is also too simple. It is the view I call Christianity-and-water, the view which simply says there is a good God in Heaven and everything is all right-leaving out all the difficult and terrible doctrines about sin and hell and the devil, and the redemption. Both these are boys&apos; philosophies.</p>
+<p>It is no good asking for a simple religion. After all, real things are not simple. They look simple, but they are not. The table I am sitting at looks simple: but ask a scientist to tell you what it is really made of-all about the atoms and how the light waves rebound from them and hit my eye and what they do to the optic nerve and what it does to my brain-and, of course, you find that what we call &quot;seeing a table&quot; lands you in mysteries and complications which you can hardly get to the end of. A child saying a child&apos;s prayer looks simple. And if you are content to stop there, well and good. But if you are not-and the modern world usually is not-if you want to go on and ask what is really happening- then you must be prepared for something difficult. If we ask for something more than simplicity, it is silly then to complain that the something more is not simple.</p>
+<p>Very often, however, this silly procedure is adopted by people who are not silly, but who, consciously or unconsciously, want to destroy Christianity. Such people put up a version of Christianity suitable for a child of six and make that the object of their attack. When you try to explain the Christian doctrine as it is really held by an instructed adult, they then complain that you are making their heads turn round and that it is all too complicated and that if there really were a God they are sure He would have made &quot;religion&quot; simple, because simplicity is so beautiful, etc. You must be on your guard against these people for they will change their ground every minute and only waste your tune. Notice, too, their idea of God &quot;making religion simple&quot;: as if &quot;religion&quot; were something God invented, and not His statement to us of certain quite unalterable facts about His own nature.</p>
+<p>Besides being complicated, reality, in my experience, is usually odd. It is not neat, not obvious, not what you expect. For instance, when you have grasped that the earth and the other planets all go round the sun, you would naturally expect that all the planets were made to match-all at equal distances from each other, say, or distances that regularly increased, or all the same size, or else getting bigger or smaller as you go farther from the sun. In fact, you find no rhyme or reason (that we can see) about either the sizes or the distances; and some of them have one moon, one has four, one has two, some have none, and one has a ring.</p>
+<p>Reality, in fact, is usually something you could not have guessed. That is one of the reasons I believe Christianity. It is a religion you could not have guessed. If it offered us just the kind of universe we had always expected, I should feel we were making it up. But, in fact, it is not the sort of thing anyone would have made up. It has just that queer twist about it that real things have. So let us leave behind all these boys&apos; philosophies-these over-simple answers. The problem is not simple and the answer is not going to be simpler either.</p>
+<p>What is the problem? A universe that contains much that is obviously bad and apparently meaningless, but containing creatures like ourselves who know that it is bad and meaningless. There are only two views that face all the facts. One is the Christian view that this is a good world that has gone wrong, but still retains the memory of what it ought to have been. The other is the view called Dualism. Dualism means the belief that there are two equal and independent powers at the back of everything, one of them good and the other bad, and that this universe is the battlefield in which they fight out an endless war. I personally think that next to Christianity Dualism is the manliest and most sensible creed on the market. But it has a catch in it.</p>
+<p>The two powers, or spirits, or gods-the good one and the bad one-are supposed to be quite independent. They both existed from all eternity. Neither of them made the other, neither of them has any more right than the other to call itself God. Each presumably thinks it is good and thinks the other bad. One of them likes hatred and cruelty, the other likes love and mercy, and each backs its own view. Now what do we mean when we call one of them the Good Power and the other the Bad Power? Either we are merely saying that we happen to prefer the one to the other-like preferring beer to cider-or else we are saying that, whatever the two powers think about it, and whichever we humans, at the moment,, happen to like, one of them is actually wrong, actually mistaken, in regarding itself as good. Now if we mean merely that we happen to prefer the first, then we must give up talking about good and evil at all. For good means what you ought to prefer quite regardless of what you happen to like at any given moment. If &quot;being good&quot; meant simply joining the side you happened to fancy, for no real reason, then good would not deserve to be called good. So we must mean that one of the two powers is actually wrong and the other actually right</p>
+<p>But the moment you say that, you are putting into the universe a third thing in addition to the two Powers: some law or standard or rule of good which one of the powers conforms to and the other fails to conform to. But since the two powers are judged by this standard, then this standard, or the Being who made this standard, is farther back and higher up than either of them, and He will be the real God. In fact, what we meant by calling them good and bad turns out to be that one of them is in a right relation to the real ultimate God and the other in a wrong relation to Him.</p>
+<p>The same point can be made in a different way. If Dualism is true, then the bad Power must be a being who likes badness for its own sake. But in reality we have no experience of anyone liking badness just because it is bad. The nearest we can get to it is in cruelty. But in real life people are cruel for one of two reasons- either because they are sadists, that is, because they have a sexual perversion which makes cruelty a cause of sensual pleasure to them, or else for the sake of something they are going to get out of it-money, or power, or safety. But pleasure, money, power, and safety are all, as far as they go, good things. The badness consists in pursuing them by the wrong method, or in the wrong way, or too much. I do not mean, of course, that the people who do this are not desperately wicked. I do mean that wickedness, when you examine it, turns out to be the pursuit of some good in the wrong way. You can be good for the mere sake of goodness: you cannot be bad for the mere sake of badness. You can do a kind action when you are not feeling kind and when it gives you no pleasure, simply because kindness is right; but no one ever did a cruel action simply because cruelty is wrong-only because cruelty was pleasant or useful to him. In other words badness cannot succeed even in being bad in the same way in which goodness is good. Goodness is, so to speak, itself: badness is only spoiled goodness. And there must be something good first before it can be spoiled. We called sadism a sexual perversion; but you must first have the idea of a normal sexuality before you can talk of its being perverted; and you can see which is the perversion, because you can explain the perverted from the normal, and cannot explain the normal from the perverted. It follows that this Bad Power, who is supposed to be on an equal footing with the Good Power, and to love badness in the same way as the Good Power loves goodness, is a mere bogy. In order to be bad he must have good things to want and then to pursue in the wrong way: he must have impulses which were originally good in order to be able to pervert them. But if he is bad he cannot supply himself either with good things to desire or with good impulses to pervert. He must be getting both from the Good Power. And if so, then he is not independent. He is part of the Good Power&apos;s world: he was made either by the Good Power or by some power above them both.</p>
+<p>Put it more simply still. To be bad, he must exist and have intelligence and will. But existence, intelligence and will are in themselves good. Therefore he must be getting them from the Good Power: even to be bad he must borrow or steal from his opponent. And do you now begin to see why Christianity has always said that the devil is a fallen angel? That is not a mere story for the children. It is a real recognition of the fact that evil is a parasite, not an original thing. The powers which enable evil to carry on are powers given it by goodness. All the things which enable a bad man to be effectively bad are in themselves good things-resolution, cleverness, good looks, existence itself. That is why Dualism, in a strict sense, will not work.</p>
+<p>But I freely admit that real Christianity (as distinct from Christianity-and-water) goes much nearer to Dualism than people think. One of the things that surprised me when I first read the New Testament seriously was that it talked so much about a Dark Power in the universe-a mighty evil spirit who was held to be the Power behind death and disease, and sin. The difference is that Christianity thinks this Dark Power was created by God, and was good when he was created, and went wrong. Christianity agrees with Dualism that this universe is at war. But it does not think this is a war between independent powers. It thinks it is a civil war, a rebellion, and that we are living in a part of the universe occupied by the rebel.</p>
+<p>Enemy-occupied territory-that is what this world is. Christianity is the story of how the rightful king has landed, you might say landed in disguise, and is calling us all to take part in a great campaign of sabotage. When you go to church you are really listening-in to the secret wireless from our friends: that is why the enemy is so anxious to prevent us from going. He does it by playing on our conceit and laziness and intellectual snobbery. I know someone will ask me, &quot;Do you really mean, at this time of day, to reintroduce our old friend the devil-hoofs and horns and all?&quot; Well, what the time of day has to do with it I do not know. And I am not particular about the hoofs and horns. But in other respects my answer is &quot;Yes, I do.&quot; I do not claim to know anything about his personal appearance. If anybody really wants to know him better I would say to that person, &quot;Don&apos;t worry. If you really want to, you will Whether you&apos;ll like it when you do is another question.&quot;</p>
+</article></body>

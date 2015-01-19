@@ -1,0 +1,556 @@
+<!DOCTYPE html><head><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+body .markdown-body {
+  padding: 30px;
+}
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.markdown-body a {
+  background: transparent;
+}
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+.markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.markdown-body img {
+  border: 0;
+}
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.markdown-body pre {
+  overflow: auto;
+}
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+.markdown-body input {
+  line-height: normal;
+}
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.markdown-body h1 {
+  font-size: 30px;
+}
+.markdown-body h2 {
+  font-size: 21px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14px;
+}
+.markdown-body h5 {
+  font-size: 12px;
+}
+.markdown-body h6 {
+  font-size: 11px;
+}
+.markdown-body blockquote {
+  margin: 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+.markdown-body dd {
+  margin-left: 0;
+}
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li > p {
+  margin-top: 16px;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-body table th {
+  font-weight: bold;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+.markdown-body .pl-c {
+  color: #969896;
+}
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.markdown-body .pl-mq {
+  color: #008080;
+}
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+.file {
+  list-style-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/file-16.png');
+}
+.dir {
+  list-style-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/699086-icon-94-folder-16.png');
+}
+.md {
+  list-style-image: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-16.png');
+}
+</style></head><body><article><h1 id="mere-christianity">Mere Christianity</h1>
+<p>by C. S. Lewis</p>
+<h2 id="3-christian-behaviour">3. Christian Behaviour</h2>
+<h3 id="3-6-christian-marriage">3.6. Christian Marriage</h3>
+<p>The last chapter was mainly negative. I discussed what was wrong with the sexual impulse in man, but said very little about its right working-in other words, about Christian marriage. There are two reasons why I do not particularly want to deal with marriage. The first is that the Christian doctrines on this subject are extremely unpopular. The second is that I have never been married myself, and, therefore, can speak only at second hand. But in spite of that, I feel I can hardly leave the subject out in an account of Christian morals. The Christian idea of marriage is based on Christ&apos;s words that a man and wife are to be regarded as a single organism-for that is what the words &quot;one flesh&quot; would be in modern English. And the Christians believe that when He said this He was not expressing a sentiment but stating a fact-just as one is stating a fact when one says that a lock and its key are one mechanism, or that a violin and a bow are one musical instrument. The inventor of the human machine was telling us that its two halves, the male and the female, were made to be combined together in pairs, not simply on the sexual level, but totally combined. The monstrosity of sexual intercourse outside marriage is that those who indulge in it are trying to isolate one kind of union (the sexual) from all the other kinds of union which were intended to go along with it and make up the total union. The Christian attitude does not mean that there is anything wrong about sexual pleasure, any more than about the pleasure of eating. It means that you must not isolate that pleasure and try to get it by itself, any more than you ought to try to get the pleasures of taste without swallowing and digesting, by chewing things and spitting them out again.</p>
+<p>As a consequence, Christianity teaches that marriage is for life. There is, of course, a difference here between different Churches: some do not admit divorce at all; some allow it reluctantly in very special cases. It is a great pity that Christians should disagree about such a question; but for an ordinary layman the thing to notice is that Churches all agree with one another about marriage a great deal more than any of them agrees with the outside world. I mean, they all regard divorce as something like cutting up a living body, as a kind of surgical operation. Some of them think the operation so violent that it cannot be done at all; others admit it as a desperate remedy in extreme cases. They are all agreed that it is more like having both your legs cut off than it is like dissolving a business partnership or even deserting a regiment What they all disagree with is the modern view that it is a simple readjustment of partners, to be made whenever people feel they are no longer in love with one another, or when either of them falls in love with someone else.</p>
+<p>Before we consider this modern view in its relation to chastity, we must not forget to consider it in relation to another virtue, namely justice. Justice, as I said before, includes the keeping of promises. Now everyone who has been married in a church has made a public, solemn promise to stick to his (or her) partner till death. The duty of keeping that promise has no special connection with sexual morality: it is in the same position as any other promise. If, as modern people are always telling us, the sexual impulse is just like all our other impulses, then it ought to be treated like all our other impulses; and as their indulgence is controlled by our promises, so should its be. If, as I think, it is not like all our other impulses, but is morbidly inflamed, then we should be especially careful not to let it lead us into dishonesty.</p>
+<p>To this someone may reply that he regarded the promise made in church as a mere formality and never intended to keep it. Whom, then, was he trying to deceive when he made it? God? That was really very unwise. Himself? That was not very much wiser. The bride, or bridegroom, or the &quot;in-laws&quot;? That was treacherous. Most often, I think, the couple (or one of them) hoped to deceive the public. They wanted the respectability that is attached to marriage without intending to pay the price: that is, they were imposters, they cheated. If they are still contented cheats, I have nothing to say to them: who would urge the high and hard duty of chastity on people who have not yet wished to be merely honest? If they have now come to their senses and want to be honest, their promise, already made, constrains them. And this, you will see, comes under the heading of justice, not that of chastity. If people do not believe in permanent marriage, it is perhaps better that they should live together unmarried than that they should make vows they do not mean to keep. It is true that by living together without marriage they will be guilty (in Christian eyes) of fornication. But one fault is not mended by adding another: unchastity is not improved by adding perjury.</p>
+<p>The idea that &quot;being in love&quot; is the only reason for remaining married really leaves no room for marriage as a contract or promise at all. If love is the whole thing, then the promise can add nothing; and if it adds nothing, then it should not be made. The curious thing is that lovers themselves, while they remain really in love, know this better than those who talk about love. As Chesterton pointed out, those who are in love have a natural inclination to bind themselves by promises. Love songs all over the world are full of vows of eternal constancy. The Christian law is not forcing upon the passion of love something which is foreign to that passion&apos;s own nature: it is demanding that lovers should take seriously something which their passion of itself impels them to do.</p>
+<p>And, of course, the promise, made when I am in love and because I am in love, to be true to the beloved as long as I live, commits one to being true even if I cease to be in love. A promise must be about things that I can do, about actions: no one can promise to go on feeling in a certain way. He might as well promise never to have a headache or always to feel hungry. But what, it may be asked, is the use of keeping two people together if they are no longer in love? There are several sound, social reasons; to provide a home for their children, to protect the woman (who has probably sacrificed or damaged her own career by getting married) from being dropped whenever the man is tired of her. But there is also another reason of which I am very sure, though I find it a little hard to explain.</p>
+<p>It is hard because so many people cannot be brought to realise that when B is better than C, A may be even better than B. They like thinking in terms of good and bad, not of good, better, and best, or bad, worse and worst. They want to know whether you think patriotism a good thing: if you reply that it is, of course, far better than individual selfishness, but that it is inferior to universal charity and should always give way to universal charity when the two conflict, they think you are being evasive. They ask what you think of dueling. If you reply that it is far better to forgive a man than to fight a duel with him, but that even a duel might be better than a lifelong enmity which expresses itself in secret efforts to &quot;do the man down,&quot; they go away complaining that you would not give them a straight answer. I hope no one will make this mistake about what I am now going to say.</p>
+<p>What we call &quot;being in love&quot; is a glorious state, and, in several ways, good for us. It helps to make us generous and courageous, it opens our eyes not only to the beauty of the beloved but to all beauty, and it subordinates (especially at first) our merely animal sexuality; in that sense, love is the great conqueror of lust. No one in his senses would deny that being in love is far better than either common sensuality or cold self-centredness. But, as I said before, &quot;the most dangerous thing you can do is to take any one impulse of our own nature and set it up as the thing you ought to follow at all costs.&quot; Being in love is a good thing, but it is not the best thing. There are many things below it, but there are also things above it. You cannot make it the basis of a whole life. It is a noble feeling, but it is still a feeling. Now no feeling can be relied on to last in its full intensity, or even to last at all. Knowledge can last, principles can last, habits can last; but feelings come and go. And in fact, whatever people say, the state called &quot;being in love&quot; usually does not last. If the old fairytale ending &quot;They lived happily ever after&quot; is taken to mean &quot;They felt for the next fifty years exactly as they felt the day before they were married,&quot; then it says what probably never was nor ever could be true, and would be highly undesirable if it were. Who could bear to live in that excitement for even five years? What would become of your work, your appetite, your sleep, your friendships? But, of course, ceasing to be &quot;in love&quot; need not mean ceasing to love. Love in this second sense-love as distinct from &quot;being in love&quot; is not merely a feeling. It is a deep unity, maintained by the will and deliberately strengthened by habit; reinforced by (in Christian marriages) the grace which both parents ask, and receive, from God. They can have this love for each other even at those moments when they do not like each other; as you love yourself even when you do not like yourself. They can retain this love even when each would easily, if they allowed themselves, be &quot;in love&quot; with someone else. &quot;Being in love&quot; first moved them to promise fidelity: this quieter love enables them to keep the promise. It is on this love that the engine of marriage is run: being in love was the explosion that started it.</p>
+<p>If you disagree with me, of course, you will say, &quot;He knows nothing about it, he is not married.&quot; You may quite possibly be right. But before you say that, make quite sure that you are judging me by what you really know from your own experience and from watching the lives of your friends, and not by ideas you have derived from novels and films. This is not so easy to do as people think. Our experience is coloured through and through by books and plays and the cinema, and it takes patience and skill to disentangle the things we have really learned from life for ourselves.</p>
+<p>People get from books the idea that if you have married the right person you may expect to go on &quot;being in love&quot; for ever. As a result, when they find they are not, they think this proves they have made a mistake and are entitled to a change-not realising that, when they have changed, the glamour will presently go out of the new love just as it went out of the old one. In this department of life, as in every other, thrills come at the beginning and do not last. The sort of thrill a boy has at the first idea of flying will not go on when he has joined the R.A.F. and is really learning to fly. The thrill you feel on first seeing some delightful place dies away when you really go to live there. Does this mean it would be better not to learn to fly and not to live in the beautiful place? By no means. In both cases, if you go through with it, the dying away of the first thrill will be compensated for by a quieter and more lasting kind of interest. What is more (and I can hardly find words to tell you how important I think this), it is just the people who are ready to submit to the loss of the thrill and settle down to the sober interest, who are then most likely to meet new thrills in some quite different direction. The man who has learned to fly and becomes a good pilot will suddenly discover music; the man who has settled down to live in the beauty spot will discover gardening.</p>
+<p>This is, I think, one little part of what Christ meant by saying that a thing will not really live unless it first dies. It is simply no good trying to keep any thrill: that is the very worst thing you can do. Let the thrill go-let it die away-go on through that period of death into the quieter interest and happiness that follow -and you will find you are living in a world of new thrills all the time. But if you decide to make thrills your regular diet and try to prolong them artificially, they will all get weaker and weaker, and fewer and fewer, and you will be a bored, disillusioned old man for the rest of your life. It is because so few people understand this that you find many middle-aged men and women maundering about their lost youth, at the very age when new horizons ought to be appearing and new doors opening all round them. It is much better fun to learn to swim than to go on endlessly (and hopelessly) trying to get back the feeling you had when you first went paddling as a small boy.</p>
+<p>Another notion we get from novels and plays is that &quot;falling in love&quot; is something quite irresistible; something that just happens to one, like measles. And because they believe this, some married people throw up the sponge and give in when they find themselves attracted by a new acquaintance. But I am inclined to think that these irresistible passions are much rarer in real life than in books, at any rate when one is grown up. When we meet someone beautiful and clever and sympathetic, of course we ought, in one sense, to admire and love these good qualities. But is it not very largely in our own choice whether this love shall, or shall not, turn into what we call &quot;being in love&quot;? No doubt, if our minds are full of novels and plays and sentimental songs, and our bodies full of alcohol, we shall turn any love we feel into that kind of love: just as if you have a rut in your path all the rainwater will run into that rut, and if you wear blue spectacles everything you see will turn blue. But that will be our own fault.</p>
+<p>Before leaving the question of divorce, I should like to distinguish two things which are very often confused. The Christian conception of marriage is one: the other is the quite different question&#x2014;now for Christians, if they are voters or Members of Parliament, ought to try to force their views of marriage on the rest of the community by embodying them in the divorce laws. A great many people seem to think that if you are a Christian yourself you should try to make divorce difficult for every one. I do not think that. At least I know I should be very angry if the Mohammedans tried to prevent the rest of us from drinking wine. My own view is that the Churches should frankly recognise that the majority of the British people are not Christians and, therefore, cannot be expected to live Christian lives. There ought to be two distinct kinds of marriage: one governed by the State with rules enforced on all citizens, the other governed by the Church with rules enforced by her on her own members. The distinction ought to be quite sharp, so that a man knows which couples are married in a Christian sense and which are not</p>
+<p>So much for the Christian doctrine about the permanence of marriage. Something else, even more unpopular, remains to be dealt with. Christian wives promise to obey their husbands. In Christian marriage the man is said to be the &quot;head.&quot; Two questions obviously arise here, (1) Why should there be a head at all -why not equality? (2) Why should it be the man?</p>
+<p>(1) The need for some head follows from the idea that marriage is permanent. Of course, as long as the husband and wife are agreed, no question of a head need arise; and we may hope that this will be the normal state of affairs in a Christian marriage. But when there is a real disagreement, what is to happen? Talk it over, of course; but I am assuming they have done that and still failed to reach agreement What do they do next? They cannot decide by a majority vote, for in a council of two there can be no majority. Surely, only one or other of two things can happen: either they must separate and go their own ways or else one or other of them must have a casting vote. If marriage is permanent, one or other party must, in the last resort, have the power of deciding the family policy. You cannot have a permanent association without a constitution.</p>
+<p>(2) If there must be a head, why the man? Well, firstly, is there any very serious wish that it should be the woman? As I have said, I am not married myself, but as far as 1 can see, even a woman who wants to be the head of her own house does not usually admire the same state of things when she finds it going on next door. She is much more likely to say &quot;Poor Mr. X! Why he allows that appalling woman to boss him about the way she does is more than I can imagine.&quot; I do not think she is even very flattered if anyone mentions the fact of her own &quot;headship.&quot; There must be something unnatural about the rule of wives over husbands, because the wives themselves are half ashamed of it and despise the husbands whom they rule. But there is also another reason; and here I speak quite frankly as a bachelor, because it is a reason you can see from outside even better than from inside. The relations of the family to the outer world-what might be called its foreign policy-must depend, in the last resort, upon the man, because he always ought to be, and usually is, much more just to the outsiders. A woman is primarily fighting for her own children and husband against the rest of the world. Naturally, almost, in a sense, rightly, their claims override, for her, all other claims. She is the special trustee of their interests. The function of the husband is to see that this natural preference of hers is not given its head. He has the last word in order to protect other people from the intense family patriotism of the wife. If anyone doubts this, let me ask a simple question. If your dog has bitten the child next door, or if your child has hurt the dog next door, which would you sooner have to deal with, the master of that house or the mistress? Or, if you are a married woman, let me ask you this question. Much as you admire your husband, would you not say that his chief failing is his tendency not to stick up for his rights and yours against the neighbours as vigorously as you would like? A bit of an Appeaser?</p>
+</article></body>

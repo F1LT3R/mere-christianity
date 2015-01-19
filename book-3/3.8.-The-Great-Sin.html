@@ -1,0 +1,554 @@
+<!DOCTYPE html><head><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+body .markdown-body {
+  padding: 30px;
+}
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.markdown-body a {
+  background: transparent;
+}
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+.markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.markdown-body img {
+  border: 0;
+}
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.markdown-body pre {
+  overflow: auto;
+}
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+.markdown-body input {
+  line-height: normal;
+}
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.markdown-body h1 {
+  font-size: 30px;
+}
+.markdown-body h2 {
+  font-size: 21px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14px;
+}
+.markdown-body h5 {
+  font-size: 12px;
+}
+.markdown-body h6 {
+  font-size: 11px;
+}
+.markdown-body blockquote {
+  margin: 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+.markdown-body dd {
+  margin-left: 0;
+}
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li > p {
+  margin-top: 16px;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-body table th {
+  font-weight: bold;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+.markdown-body .pl-c {
+  color: #969896;
+}
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.markdown-body .pl-mq {
+  color: #008080;
+}
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+.file {
+  list-style-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/file-16.png');
+}
+.dir {
+  list-style-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/699086-icon-94-folder-16.png');
+}
+.md {
+  list-style-image: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-16.png');
+}
+</style></head><body><article><h1 id="mere-christianity">Mere Christianity</h1>
+<p>by C. S. Lewis</p>
+<h2 id="3-christian-behaviour">3. Christian Behaviour</h2>
+<h3 id="3-8-the-great-sin">3.8. The Great Sin</h3>
+<p>Today I come to that part of Christian morals where they differ most sharply from all other morals. There is one vice of which no man in the world is free; which every one in the world loathes when he sees it in someone else; and of which hardly any people, except Christians, ever imagine that they are guilty themselves. I have heard people admit that they are bad-tempered, or that they cannot keep their heads about girls or drink, or even that they are cowards. I do not think I have ever heard anyone who was not a Christian accuse himself of this vice. And at the same time I have very seldom met anyone, who was not a Christian, who showed the slightest mercy to it in others. There is no fault which makes a man more unpopular, and no fault which We are more unconscious of in ourselves. And the more we have it ourselves, the more we dislike it in others.</p>
+<p>The vice I am talking of is Pride or Self-Conceit: and the virtue opposite to it, in Christian morals, is called Humility. You may remember, when I was talking about sexual morality, I warned you that the centre of Christian morals did not lie there. Well, now, we have come to the centre. According to Christian teachers, the essential vice, the utmost evil, is Pride. Unchastity, anger, greed, drunkenness, and all that, are mere flea bites in comparison: it was through Pride that the devil became the devil: Pride leads to every other vice: it is the complete anti-God state of mind.</p>
+<p>Does this seem to you exaggerated? If so, think it over. I pointed out a moment ago that the more pride one had, the more one disliked pride in others. In fact, if you want to find out how proud you are the easiest way is to ask yourself, &quot;How much do I dislike it when other people snub me, or refuse to take any notice of me, or shove their oar in, or patronise me, or show off?&quot; The point is that each person&apos;s pride is in competition with every one else&apos;s pride. It is because I wanted to be the big noise at the party that I am so annoyed at someone else being the big noise. Two of a trade never agree. Now what you want to get clear is that Pride is essentially competitive&#x2014;is competitive by its very nature&#x2014;while the other vices are competitive only, so to speak, by accident. Pride gets no pleasure out of having something, only out of having more of it than the next man. We say that people are proud of being rich, or clever, or good-looking, but they are not. They are proud of being richer, or cleverer, or better-looking than others. If every one else became equally rich, or clever, or good-looking there would be nothing to be proud about. It is the comparison that makes you proud: the pleasure of being above the rest. Once the element of competition has gone, pride has gone. That is why I say that Pride is essentially competitive in a way the other vices are not. The sexual impulse may drive two men into competition if they both want the same girl But that is only by accident; they might just as likely have wanted two different girls. But a proud man will take your girl from you, not because he wants her, but just to prove to himself that he is a better man than you. Greed may drive men into competition if there is not enough to go round; but the proud man, even when he has got more than he can possibly want, will try to get still more just to assert his power. Nearly all those evils in the world which people put down to greed or selfishness are really far more the result of Pride.</p>
+<p>Take it with money. Greed will certainly make a man want money, for the sake of a better house, better holidays, better things to eat and drink. But only up to a point What is it dial makes a man with &#x408;10,000 a year anxious to get &#x408;20,000 a year? It is not the greed for more pleasure. &#x408;10,000 will give all the luxuries that any man can really enjoy. It is Pride-the wish to be richer than some other rich man, and (still more) the wish for power. For, of course, power is what Pride really enjoys: there is nothing makes a man feel so superior to others as being able to move them about like toy soldiers. What makes a pretty girl spread misery wherever she goes by collecting admirers? Certainly not her sexual instinct: that kind of girl is quite often sexually frigid. It is Pride. What is it that makes a political leader or a whole nation go on and on, demanding more and more? Pride again. Pride is competitive by its very nature: that is why it goes on and on. If I am a proud man, then, as long as there is one man in the whole world more powerful, or richer, or cleverer than I, he is my rival and my enemy.</p>
+<p>The Christians are right: it is Pride which has been the chief cause of misery in every nation and every family since the world began. Other vices may sometimes bring people together: you may find good fellowship and jokes and friendliness among drunken people or unchaste people. But Pride always means enmity-it is enmity. And not only enmity between man and man, but enmity to God.</p>
+<p>In God you come up against something which is in every respect immeasurably superior to yourself. Unless you know God as that-and, therefore, know yourself as nothing in comparison- you do not know God at all. As long as you are proud you cannot know God. A proud man is always looking down on things and people: and, of course, as long as you are looking down, you cannot see something that is above you.</p>
+<p>That raises a terrible question. How is it that people who are quite obviously eaten up with Pride can say they believe in God and appear to themselves very religious? I am afraid it means they are worshipping an imaginary God. They theoretically admit themselves to be nothing in the presence of this phantom God, but are really all the time imagining how He approves of them and thinks them far better than ordinary people: that is, they pay a pennyworth of imaginary humility to Him and get out of it a pound&apos;s worth of Pride towards their fellow-men. I suppose it was of those people Christ was thinking when He said that some would preach about Him and cast out devils in His name, only to be told at the end of the world that He had never known them. And any of us may at any moment be in this death-trap. Luckily, we have a test Whenever we find that our religious life is making us feel that we are good-above all, that we are better than someone else-I think we may be sure that we are being acted on, not by God, but by the devil The real test of being in the presence of God is that you either forget about yourself altogether or see yourself as a small, dirty object. It is better to forget about yourself altogether.</p>
+<p>It is a terrible thing that the worst of all the vices can smuggle itself into the very centre of our religious life. But you can see why. The other, and less bad, vices come from the devil working on us through our animal nature. But this does not come through our animal nature at all It comes direct from Hell. It is purely spiritual: consequently it is far more subtle and deadly. For the same reason, Pride can often be used to beat down the simpler vices. Teachers, in fact, often appeal to a boy&apos;s Pride, or, as they call it, his self-respect, to make him behave decently: many a man has overcome cowardice, or lust, or ill-temper by learning to think that they are beneath his dignity-that is, by Pride. The devil laughs. He is perfectly content to see you becoming chaste and brave and self-con trolled provided, all the time, he is setting up in you the Dictatorship of Pride-just as he would be quite content to see your chilblains cured if he was allowed, in return, to give you cancer. For Pride is spiritual cancer: it eats up the very possibility of love, or contentment, or even common sense.</p>
+<p>Before leaving this subject I must guard against some possible misunderstandings:</p>
+<p>(1) Pleasure in being praised is not Pride. The child who is patted on the back for doing a lesson well, the woman whose beauty is praised by her lover, the saved soul to whom Christ says &quot;Well done,&quot; are pleased and ought to be. For here the pleasure lies not in what you are but in the fact that you have pleased someone you wanted (and rightly wanted) to please. The trouble begins when you pass from thinking, &quot;I have pleased him; all is well,&quot; to thinking, &quot;What a fine person I must be to have done it.&quot; The more you delight in yourself and the less you delight in the praise, the worse you are becoming. When you delight wholly in yourself and do not care about the praise at all, you have reached the bottom. That is why vanity, though it is the sort of Pride which shows most on the surface, is really the least bad and most pardonable sort. The vain person wants praise, applause, admiration, too much and is always angling for it. It is a fault, but a childlike and even (in an odd way) a humble fault. It shows that you are not yet completely contented with your own admiration. You value other people enough to want them to look at you. You are, in fact, still human. The real black, diabolical Pride comes when you look down on others so much that you do not care what they think of you. Of course, it is very right, and often our duty, not to care what people think of us, if we do so for the right reason; namely, because we care so incomparably more what God thinks. But the Proud man has a different reason for not caring. He says &quot;Why should I care for the applause of that rabble as if their opinion were worth anything? And even if their opinions were of value, am I the sort of man to blush with pleasure at a compliment like some chit of a girl at her first dance? No, I am an integrated, adult personality. All I have done has been done to satisfy my own ideals-or my artistic conscience-or the traditions of my family- or, in a word, because I&apos;m That Kind of Chap. If the mob like it, let them. They&apos;re nothing to me.&quot; In this way real thoroughgoing Pride may act as a check on vanity; for, as I said a moment ago, the devil loves &quot;curing&quot; a small fault by giving you a great one. We must try not to be vain, but we must never call in our Pride to cure our vanity; better the frying-pan than the fire.</p>
+<p>(2) We say in English that a man is &quot;proud&quot; of his son, or his father, or his school, or regiment, and it may be asked whether &quot;pride&quot; in this sense is a sin. I think it depends on what, exactly, we mean by &quot;proud of.&quot; Very often, in such sentences, the phrase &quot;is proud of&quot; means &quot;has a warm-hearted admiration for.&quot; Such an admiration is, of course, very far from being a sin. But it might, perhaps, mean that the person in question gives himself airs on the ground of his distinguished father, or because he belongs to a famous regiment. This would, clearly, be a fault; but even then, it would be better than being proud simply of himself. To love and admire anything outside yourself is to take one step away from utter spiritual ruin; though we shall not be well so long as we love and admire anything more than we love and admire God.</p>
+<p>(3) We must not think Pride is something God forbids because He is offended at it, or that Humility is something He demands as due to His own dignity-as if God Himself was proud. He is not in the least worried about His dignity. The point is, He wants you to know Him; wants to give you Himself. And He and you are two things of such a kind that if you really get into any kind of touch with Him you will, in fact, be humble-delightedly humble, feeling the infinite relief of having for once got rid of all the silly nonsense about your own dignity which has made you restless and unhappy all your life. He is trying to make you humble in order to make this moment possible: trying to take off a lot of silly, ugly, fancy-dress in which we have all got ourselves up and are strutting about like the little idiots we are. I wish I had got a bit further with humility myself: if I had, I could probably tell you more about the relief, the comfort, of taking the fancy-dress off-getting rid of the false self, with all its &quot;Look at me&quot; and &quot;Aren&apos;t I a good boy?&quot; and all its posing and posturing. To get even near it, even for a moment, is like a drink of cold water to a man in a desert.</p>
+<p>(4) Do not imagine that if you meet a really humble man he will be what most people call &quot;humble&quot; nowadays: he will not be a sort of greasy, smarmy person, who is always telling you that, of course, he is nobody. Probably all you will think about him is that he seemed a cheerful, intelligent chap who took a real interest in what you said to him. If you do dislike him it will be because you feel a little envious of anyone who seems to enjoy life so easily. He will not be thinking about humility: he will not be thinking about himself at all.</p>
+<p>If anyone would like to acquire humility, I can, I think, tell him the first step. The first step is to realise that one is proud. And a biggish step, too. At least, nothing whatever can be done before it. If you think you are not conceited, it means you are very conceited indeed.</p>
+</article></body>

@@ -1,0 +1,554 @@
+<!DOCTYPE html><head><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+body .markdown-body {
+  padding: 30px;
+}
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.markdown-body a {
+  background: transparent;
+}
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+.markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.markdown-body img {
+  border: 0;
+}
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.markdown-body pre {
+  overflow: auto;
+}
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+.markdown-body input {
+  line-height: normal;
+}
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.markdown-body h1 {
+  font-size: 30px;
+}
+.markdown-body h2 {
+  font-size: 21px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14px;
+}
+.markdown-body h5 {
+  font-size: 12px;
+}
+.markdown-body h6 {
+  font-size: 11px;
+}
+.markdown-body blockquote {
+  margin: 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+.markdown-body dd {
+  margin-left: 0;
+}
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li > p {
+  margin-top: 16px;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-body table th {
+  font-weight: bold;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+.markdown-body .pl-c {
+  color: #969896;
+}
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.markdown-body .pl-mq {
+  color: #008080;
+}
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+.file {
+  list-style-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/file-16.png');
+}
+.dir {
+  list-style-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/699086-icon-94-folder-16.png');
+}
+.md {
+  list-style-image: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-16.png');
+}
+</style></head><body><article><h1 id="mere-christianity">Mere Christianity</h1>
+<p>by C. S. Lewis</p>
+<h2 id="3-christian-behaviour">3. Christian Behaviour</h2>
+<h3 id="3-5-sexual-morality">3.5. Sexual Morality</h3>
+<p>We must now consider Christian morality as regards sex, what Christians call the virtue of chastity. The Christian rule of chastity must not be confused with the social rule of &quot;modesty&quot; (in one sense of that word); i.e. propriety, or decency. The social rule of propriety lays down how much of the human body should be displayed and what subjects can be referred to, and in what words, according to the customs of a given social circle. Thus, while the rule of chastity is the same for all Christians at all times, the rule of propriety changes. A girl in the Pacific islands wearing hardly any clothes and a Victorian lady completely covered in clothes might both be equally &quot;modest,&quot; proper, or decent, according to the standards of their own societies: and both, for all we could tell by their dress, might be equally chaste (or equally unchaste). Some of the language which chaste women used in Shakespeare&apos;s time would have been used in the nineteenth century only by a woman completely abandoned. When people break the rule of propriety current in their own time and place, if they do so in order to excite lust in themselves or others, then they are offending against chastity. But if they break it through ignorance or carelessness they are guilty only of bad manners. When, as often happens, they break it defiantly in order to shock or embarrass others, they are not necessarily being unchaste, but they are being uncharitable: for it is uncharitable to take pleasure in making other people uncomfortable. I do not think that a very strict or fussy standard of propriety is any proof of chastity or any help to it, and I therefore regard the great relaxation and simplifying of the rule which has taken place in my own lifetime as a good thing. At its present stage, however, it has this inconvenience, that people of different ages and different types do not all acknowledge the same standard, and we hardly know where we are. While this confusion lasts I think that old, or old-fashioned, people should be very careful not to assume that young or &quot;emancipated&quot; people are corrupt whenever they are (by the old standard) improper; and, in return, that young people should not call their elders prudes or puritans because they do not easily adopt the new standard. A real desire to believe all the good you can of others and to make others as comfortable as you can will solve most of the problems.</p>
+<p>Chastity is the most unpopular of the Christian virtues. There is no getting away from it: the old Christian rule is, &quot;Either marriage, with complete faithfulness to your partner, or else total abstinence.&quot; Now this is so difficult and so contrary to our instincts, that obviously either Christianity is wrong or our sexual instinct, as it now is, has gone wrong. One or the other. Of course, being a Christian, I think it is the instinct which has gone wrong.</p>
+<p>But I have other reasons for thinking so. The biological purpose of sex is children, just as the biological purpose of eating is to repair the body. Now if we eat whenever we feel inclined and just as much as we want, it is quite true that most of us will eat too much: but not terrifically too much. One man may eat enough for two, but he does not eat enough for ten. The appetite goes a little beyond its biological purpose, but not enormously. But if a healthy young man indulged his sexual appetite whenever he felt inclined, and if each act produced a baby, then in ten years he might easily populate a small village. This appetite is in ludicrous and preposterous excess of its function.</p>
+<p>Or take it another way. You can get a large audience together for a strip-tease act-that is, to watch a girl undress on the stage. Now suppose you came to a country where you could fill a theatre by simply bringing a covered plate on to the stage and then slowly lifting the cover so as to let every one see, just before the lights went out, that it contained a mutton chop or a bit of bacon, would you not think that in that country something had gone wrong with the appetite for food? And would not anyone who had grown up in a different world think there was something equally queer about the state of the sex instinct among us?</p>
+<p>One critic said that if he found a country in which such striptease acts with food were popular, he would conclude that the people of that country were starving. He meant, of course, to imply that such things as the strip-tease act resulted not from sexual corruption but from sexual starvation. I agree with him that if, in some strange land, we found that similar acts with mutton chops were popular, one of the possible explanations which would occur to me would be famine. But the next step would be to test our hypothesis by finding out whether, in fact, much or little food was being consumed in that country. If the evidence showed that a good deal was being eaten, then of course we should have to abandon the hypothesis of starvation and try to think of another one. In the same way, before accepting sexual starvation as the cause of the strip-tease, we should have to look for evidence that there is in fact more sexual abstinence in our age than in those ages when things like the strip-tease were unknown. But surely there is no such evidence. Contraceptives have made sexual indulgence far less costly within marriage and far safer outside it than ever before, and public opinion is less hostile to illicit unions and even to perversion than it has been since Pagan times. Nor is the hypothesis of &quot;starvation&quot; the only one we can imagine. Everyone knows that the sexual appetite, like our other appetites, grows by indulgence. Starving men may think much about food, but so do gluttons; the gorged, as well as the famished, like titillations.</p>
+<p>Here is a third point. You find very few people who want to eat things that really are not food or to do other things with food instead of eating it. In other words, perversions of the food appetite are rare. But perversions of the sex instinct are numerous, hard to cure, and frightful. I am sorry to have to go into all these details, but I must. The reason why I must is that you and I, for the last twenty years, have been fed all day long on good solid lies about sex. We have been told, till one is sick of hearing it, that sexual desire is in the same state as any of our other natural desires and that if only we abandon the silly old Victorian idea of hushing it up, everything in the garden will be lovely. It is not true. The moment you look at the facts, and away from the propaganda, you see that it is not.</p>
+<p>They tell you sex has become a mess because it was hushed up. But for the last twenty years it has not been hushed up. It has been chattered about all day long. Yet it is still in a mess. If hushing up had been the cause of the trouble, ventilation would have set it right. But it has not. I think it is the other way round. I think the human race originally hushed it up because it had become such a mess. Modern people are always saying, &quot;Sex is nothing to be ashamed of.&quot; They may mean two things. They may mean &quot;There is nothing to be ashamed of in the fact that the human race reproduces itself in a certain way, nor in the fact that it gives pleasure.&quot; If they mean that, they are right. Christianity says the same. It is not the thing, nor the pleasure, that is the trouble. The old Christian teachers said that if man had never fallen, sexual pleasure, instead of being less than it is now, would actually have been greater. I know some muddle-headed Christians have talked as if Christianity thought that sex, or the body, or pleasure, were bad in themselves. But they were wrong. Christianity is almost the only one of the great religions which thoroughly approves of the body-which believes that matter is good, that God Himself once took on a human body, that some kind of body is going to be given to us even in Heaven and is going to be an essential part of our happiness, our beauty, and our energy. Christianity has glorified marriage more than any other religion: and nearly all the greatest love poetry in the world has been produced by Christians. If anyone says that sex, in itself, is bad, Christianity contradicts him at once. But, of course, when people say, &quot;Sex is nothing to be ashamed of,&quot; they may mean &quot;the state into which the sexual instinct has now got is nothing to be ashamed of.&quot;</p>
+<p>If they mean that, I think they are wrong. I think it is everything to be ashamed of. There is nothing to be ashamed of in enjoying your food: there would be everything to be ashamed of if half the world made food the main interest of their lives and spent their time looking at pictures of food and dribbling and smacking their lips. I do not say you and I are individually responsible for the present situation. Our ancestors have handed over to us organisms which are warped in this respect: and we grow up surrounded by propaganda in favour of unchastity. There are people who want to keep our sex instinct inflamed in order to make money out of us. Because, of course, a man with an obsession is a man who has very little sales-resistance. God knows our situation; He will not judge us as if we had no difficulties to overcome. What matters is the sincerity and perseverance of our will to overcome them.</p>
+<p>Before we can be cured we must want to be cured. Those who really wish for help will get it; but for many modern people even the wish is difficult. It is easy to think that we want something when we do not really want it. A famous Christian long ago told us that when he was a young man he prayed constantly for chastity; but years later he realised that while his lips had been saying, &quot;Oh Lord, make me chaste,&quot; his heart had been secretly adding, &quot;But please don&apos;t do it just yet.&quot; This may happen in prayers for other virtues too; but there are three reasons why it is now specially difficult for us to desire-let alone to achieve-complete chastity.</p>
+<p>In the first place our warped natures, the devils who tempt us, and all the contemporary propaganda for lust, combine to make us feel that the desires we are resisting are so &quot;natural,&quot; so &quot;healthy,&quot; and so reasonable, that it is almost perverse and abnormal to resist them. Poster after poster, film after film, novel after novel, associate the idea of sexual indulgence with the ideas of health, normality, youth, frankness, and good humour. Now this association is a lie. Like all powerful lies, it is based on a truth-the truth, acknowledged above, that sex in itself (apart from the excesses and obsessions that have grown round it) is &quot;normal&quot; and &quot;healthy,&quot; and all the rest of it. The lie consists in the suggestion that any sexual act to which you are tempted at the moment is also healthy and normal. Now this, on any conceivable view, and quite apart from Christianity, must be nonsense. Surrender to all our desires obviously leads to impotence, disease, jealousies, lies, concealment, and everything that is the reverse of health, good humour, and frankness. For any happiness, even in this world, quite a lot of restraint is going to be necessary; so the claim made by every desire, when it is strong, to be healthy and reasonable, counts for nothing. Every sane and civilised man must have some set of principles by which he chooses to reject some of his desires and to permit others. One man does this on Christian principles, another on hygienic principles, another on sociological principles. The real conflict is not between Christianity and &quot;nature,&quot; but between Christian principle and other principles in the control of &quot;nature.&quot; For &quot;nature&quot; (in the sense of natural desire) will have to be controlled anyway, unless you are going to ruin your whole life. The Christian principles are, admittedly, stricter than the others; but then we think you will get help towards obeying them which you will not get towards obeying the others.</p>
+<p>In the second place, many people are deterred from seriously attempting Christian chastity because they think (before trying) that it is impossible. But when a thing has to be attempted, one must never think about possibility or impossibility. Faced with an optional question in an examination paper, one considers whether one can do it or not: faced with a compulsory question, one must do the best one can. You may get some marks for a very imperfect answer: you will certainly get none for leaving the question alone. Not only in examinations but in war, in mountain climbing, in learning to skate, or swim, or ride a bicycle, even in fastening a stiff collar with cold fingers, people quite often do what seemed impossible before they did it. It is wonderful what you can do when you have to.</p>
+<p>We may, indeed, be sure that perfect chastity-like perfect charity-will not be attained by any merely human efforts. You must ask for God&apos;s help. Even when you have done so, it may seem to you for a long time that no help, or less help than you need, is being given. Never mind. After each failure, ask forgiveness, pick yourself up, and try again. Very often what God first helps us towards is not the virtue itself but just this power of always trying again. For however important chastity (or courage, or truthfulness, or any other virtue) may be, this process trains us in habits of the soul which are more important still. It cures our illusions about ourselves and teaches us to depend on God. We learn, on the one hand, that we cannot trust ourselves even in our best moments, and, on the other, that we need not despair even in our worst, for our failures are forgiven. The only fatal thing is to sit down content with anything less than perfection.</p>
+<p>Thirdly, people often misunderstand what psychology teaches about &quot;repressions.&quot; It teaches us that &quot;repressed&quot; sex is dangerous. But &quot;repressed&quot; is here a technical term: it does not mean &quot;suppressed&quot; in the sense of &quot;denied&quot; or &quot;resisted.&quot; A repressed desire or thought is one which has been thrust into the subconscious (usually at a very early age) and can now come before the mind only in a disguised and unrecognisable form. Repressed sexuality does not appear to the patient to be sexuality at all. When an adolescent or an adult is engaged in resisting a conscious desire, he is not dealing with a repression nor is he in the least danger of creating a repression. On the contrary, those who are seriously attempting chastity are more conscious, and soon know a great deal more about their own sexuality than anyone else. They come to know their desires as Wellington knew Napoleon, or as Sherlock Holmes knew Moriarty; as a rat-catcher knows rats or a plumber knows about leaky pipes. Virtue-even attempted virtue-brings light; indulgence brings fog.</p>
+<p>Finally, though I have had to speak at some length about sex, I want to make it as clear as I possibly can that the centre of Christian morality is not here. If anyone thinks that Christians regard unchastity as the supreme vice, he is quite wrong. The sins of the flesh are bad, but they are the least bad of all sins. All the worst pleasures are purely spiritual: the pleasure of putting other people in the wrong, of bossing and patronising and spoiling sport, and back-biting; the pleasures of power, of hatred. For there are two things inside me, competing with the human self which I must try to become. They are the Animal self, and the Diabolical self. The Diabolical self is the worse of the two. That is why a cold, self-righteous prig who goes regularly to church may be far nearer to hell than a prostitute. But, of course, it is better to be neither.</p>
+</article></body>

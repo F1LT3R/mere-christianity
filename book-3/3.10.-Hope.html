@@ -1,0 +1,556 @@
+<!DOCTYPE html><head><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+body .markdown-body {
+  padding: 30px;
+}
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+.markdown-body a {
+  background: transparent;
+}
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+.markdown-body strong {
+  font-weight: bold;
+}
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.markdown-body img {
+  border: 0;
+}
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.markdown-body pre {
+  overflow: auto;
+}
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+.markdown-body input {
+  line-height: normal;
+}
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+.markdown-body h1 {
+  font-size: 30px;
+}
+.markdown-body h2 {
+  font-size: 21px;
+}
+.markdown-body h3 {
+  font-size: 16px;
+}
+.markdown-body h4 {
+  font-size: 14px;
+}
+.markdown-body h5 {
+  font-size: 12px;
+}
+.markdown-body h6 {
+  font-size: 11px;
+}
+.markdown-body blockquote {
+  margin: 0;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+.markdown-body dd {
+  margin-left: 0;
+}
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-body .anchor:focus {
+  outline: none;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+.markdown-body h5 {
+  font-size: 1em;
+}
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-body li > p {
+  margin-top: 16px;
+}
+.markdown-body dl {
+  padding: 0;
+}
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-body table th {
+  font-weight: bold;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-body pre {
+  word-wrap: normal;
+}
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+.markdown-body .pl-c {
+  color: #969896;
+}
+.markdown-body .pl-c1,
+.markdown-body .pl-mdh,
+.markdown-body .pl-mm,
+.markdown-body .pl-mp,
+.markdown-body .pl-mr,
+.markdown-body .pl-s1 .pl-v,
+.markdown-body .pl-s3,
+.markdown-body .pl-sc,
+.markdown-body .pl-sv {
+  color: #0086b3;
+}
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+.markdown-body .pl-s1 .pl-s2,
+.markdown-body .pl-smi,
+.markdown-body .pl-smp,
+.markdown-body .pl-stj,
+.markdown-body .pl-vo,
+.markdown-body .pl-vpf {
+  color: #333;
+}
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+.markdown-body .pl-k,
+.markdown-body .pl-s,
+.markdown-body .pl-st {
+  color: #a71d5d;
+}
+.markdown-body .pl-pds,
+.markdown-body .pl-s1,
+.markdown-body .pl-s1 .pl-pse .pl-s2,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-src,
+.markdown-body .pl-v {
+  color: #df5000;
+}
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+.markdown-body .pl-mq {
+  color: #008080;
+}
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+.markdown-body .pl-md,
+.markdown-body .pl-mdhf {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.markdown-body .pl-mdht,
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+.markdown-body .task-list-item + .task-list-item {
+  margin-top: 3px;
+}
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}
+.file {
+  list-style-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/file-16.png');
+}
+.dir {
+  list-style-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/699086-icon-94-folder-16.png');
+}
+.md {
+  list-style-image: url('https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-16.png');
+}
+</style></head><body><article><h1 id="mere-christianity">Mere Christianity</h1>
+<p>by C. S. Lewis</p>
+<h2 id="3-christian-behaviour">3. Christian Behaviour</h2>
+<h3 id="3-10-hope">3.10. Hope</h3>
+<p>Hope is one of the Theological virtues. This means that a continual looking forward to the eternal world is not (as some modern people think) a form of escapism or wishful thinking, but one of the things a Christian is meant to do. It does not mean that we are to leave the present world as it is. If you read history you will find that the Christians who did most for the present world were just those who thought most of the next. The Apostles themselves, who set on foot the conversion of the Roman Empire, the great men who built up the Middle Ages, the English Evangelicals who abolished the Slave Trade, all left their mark on Earth, precisely because their minds were occupied with Heaven. It is since Christians have largely ceased to think of the other world that they have become so ineffective in this. Aim at Heaven and you will get earth &quot;thrown in&quot;: aim at earth and you will get neither. It seems a strange rule, but something like it can be seen at work in other matters. Health is a great blessing, but the moment you make health one of your main, direct objects you start becoming a crank and imagining there is something wrong with you. You are only likely to get health provided you want other things more -food, games, work, fun, open air. In the same way, we shall never save civilisation as long as civilisation is our main object. We must learn to want something else even more.</p>
+<p>Most of us find it very difficult to want &quot;Heaven&quot; at all-except in so far as &quot;Heaven&quot; means meeting again our friends who have died. One reason for this difficulty is that we have not been trained: our whole education tends to fix our minds on this world. Another reason is that when the real want for Heaven is present in us, we do not recognise it. Most people, if they had really learned to look into their own hearts, would know that they do want, and want acutely, something that cannot be had in this world. There are all sorts of things in this world that offer to give it to you, but they never quite keep their promise. The longings which arise in us when we first fall in love, or first think of some foreign country, or first take up some subject that excites us, are longings which no marriage, no travel, no learning, can really satisfy. I am not now speaking of what would be ordinarily called unsuccessful marriages, or holidays, or learned careers. I am speaking of the best possible ones. There was something we grasped at, in that first moment of longing, which just fades away in the reality. I think everyone knows what I mean. The wife may be a good wife, and the hotels and scenery may have been excellent, and chemistry may be a very interesting job: but something has evaded us. Now there are two wrong ways of dealing with this fact, and one right one.</p>
+<p>(1) The Fool&apos;s Way.-He puts the blame on the things themselves. He goes on all his life thinking that if only he tried another woman, or went for a more expensive holiday, or whatever it is, then, this time, he really would catch the mysterious something we are all after. Most of the bored, discontented, rich people in the world are of this type. They spend their whole lives trotting from woman to woman (through the divorce courts), from continent to continent, from hobby to hobby, always thinking that the latest is &quot;the Real Thing&quot; at last, and always disappointed.</p>
+<p>(2) The Way of the Disillusioned &quot;Sensible Man.&quot;-He soon decides that the whole thing was moonshine. &quot;Of course,&quot; he says, &quot;one feels like that when one&apos;s young. But by the time you get to my age you&apos;ve given up chasing the rainbow&apos;s end.&quot; And so he settles down and learns not to expect too much and represses the part of himself which used, as he would say, &quot;to cry for the moon.&quot; This is, of course, a much better way than the first, and makes a man much happier, and less of a nuisance to society. It tends to make him a prig (he is apt to be rather superior towards what he calls &quot;adolescents&quot;), but, on the whole, he rubs along fairly comfortably. It would be the best line we could take if man did not live for ever. But supposing infinite happiness really is there, waiting for us? Supposing one really can reach the rainbow&apos;s end? In that case it would be a pity to find out too late (a moment after death) that by our supposed &quot;common sense&quot; we had stifled in ourselves the faculty of enjoying it.</p>
+<p>(3) The Christian Way.-The Christian says, &quot;Creatures are not born with desires unless satisfaction for those desires exists. A baby feels hunger well, there is such a thing as food. A duckling wants to swim: well, there is such a thing as water. Men feel sexual desire: well, there is such a thing as sex. If I find in myself a desire which no experience in this world can satisfy, the most probable explanation is that I was made for another world. If none of my earthly pleasures satisfy it, that does not prove that the universe is a fraud. Probably earthly pleasures were never meant to satisfy it, but only to arouse it, to suggest the real thing. If that is so, I must take care, on the one hand, never to despise, or be unthankful for, these earthly blessings, and on the other, never to mistake them for the something else of which they are only a kind of copy, or echo, or mirage. I must keep alive in myself the desire for my true country, which I shall not find till after death; I must never let it get snowed under or turned aside; I must make it the main object of life to press on to that other country and to help others to do the same.&quot;</p>
+<p>There is no need to be worried by facetious people who try to make the Christian hope of &quot;Heaven&quot; ridiculous by saying they do not want &quot;to spend eternity playing harps.&quot; The answer to such people is that if they cannot understand books written for grown-ups, they should not talk about them. All the scriptural imagery (harps, crowns, gold, etc.) is, of course, a merely symbolical attempt to express the inexpressible. Musical instruments are mentioned because for many people (not all) music is the thing known in the present life which most strongly suggests ecstasy and infinity. Crowns are mentioned to suggest the fact that those who are united with God in eternity share His splendour and power and joy. Gold is mentioned to suggest the timelessness of Heaven (gold does not rust) and the preciousness of it. People who take these symbols literally might as well think that when Christ told us to be like doves, He meant that we were to lay eggs.</p>
+<h3 id="3-11-faith">3.11. Faith</h3>
+<p>I must talk in this chapter about what the Christians call Faith. Roughly speaking, the word Faith seems to be used by Christians in two senses or on two levels, and I will take them in turn. In the first sense it means simply Belief-accepting or regarding as true the doctrines of Christianity. That is fairly simple. But what does puzzle people-at least it used to puzzle me-is the fact that Christians regard faith in this sense as a virtue, I used to ask how on earth it can be a virtue-what is there moral or immoral about believing or not believing a set of statements? Obviously, I used to say, a sane man accepts or rejects any statement, not because he wants or does not want to, but because the evidence seems to him good or bad. If he were mistaken about the goodness or badness of the evidence that would not mean he was a bad man, but only that he was not very clever. And if he thought the evidence bad but tried to force himself to believe in spite of it, that would be merely stupid.</p>
+<p>Well, I think I still take that view. But what I did not see then- and a good many people do not see still-was this. I was assuming that if the human mind once accepts a thing as true it will automatically go on regarding it as true, until some real reason for reconsidering it turns up. In fact, I was assuming that the human mind is completely ruled by reason. But that is not so. For example, my reason is perfectly convinced by good evidence that anaesthetics do not smother me and that properly trained surgeons do not start operating until I am unconscious. But that does not alter the fact that when they have me down on the table and clap their horrible mask over my face, a mere childish panic begins inside me. I start thinking I am going to choke, and I am afraid they will start cutting me up before I am properly under. In other words, I lose my faith in anaesthetics. It is not reason that is taking away my faith: on the contrary, my faith is based on reason. It is my imagination and emotions. The battle is between faith and reason on one side and emotion and imagination on the other.</p>
+<p>When you think of it you will see lots of instances of this. A man knows, on perfectly good evidence, that a pretty girl of his acquaintance is a liar and cannot keep a secret and ought not to be trusted; but when he finds himself with her his mind loses its faith in that bit of knowledge and he starts thinking, &quot;Perhaps she&apos;ll be different this time,&quot; and once more makes a fool of himself and tells her something he ought not to have told her. His senses and emotions have destroyed his faith in what he really knows to be true. Or take a boy learning to swim. His reason knows perfectly well that an unsupported human body will not necessarily sink in water: he has seen dozens of people float and swim. But the whole question is whether he will be able to go on believing this when the instructor takes away his hand and leaves him unsupported in the water-or whether he will suddenly cease to believe it and get in a fright and go down.</p>
+<p>Now just the same thing happens about Christianity. I am not asking anyone to accept Christianity if his best reasoning tells him that the weight of the evidence is against it. That is not the point at which Faith comes in. But supposing a man&apos;s reason once decides that the weight of the evidence is for it. I can tell that man what is going to happen to him in the next few weeks. There will come a moment when there is bad news, or he is in trouble, or is living among a lot of other people who do not believe it, and all at once his emotions will rise up and carry out a sort of blitz on his belief. Or else there will come a moment when he wants a woman, or wants to tell a lie, or feels very pleased with himself, or sees a chance of making a little money in some way that is not perfectly fair: some moment, in fact, at which it would be very convenient if Christianity were not true. And once again his wishes and desires will carry out a blitz. I am not talking of moments at which any real new reasons against Christianity turn up. Those have to be faced and that is a different matter. I am talking about moments where a mere mood rises up against it.</p>
+<p>Now Faith, in the sense in which I am here using the word, is the art of holding on to things your reason has once accepted, in spite of your changing moods. For moods will change, whatever view your reason takes. I know that by experience. Now that I am a Christian I do have moods in which the whole thing looks very improbable: but when I was an atheist I had moods in which Christianity looked terribly probable. This rebellion of your moods against your real self is going to come anyway. That is why Faith is such a necessary virtue: unless you teach your moods &quot;where they get off,&quot; you can never be either a sound Christian or even a sound atheist, but just a creature dithering to and fro, with its beliefs really dependent on the weather and the state of its digestion. Consequently one must train the habit of Faith.</p>
+<p>The first step is to recognise the fact that your moods change. The next is to make sure that, if you have once accepted Christianity, then some of its main doctrines shall be deliberately held before your mind for some time every day. That is why daily prayers and religious reading and church going are necessary parts of the Christian life. We have to be continually reminded of what we believe. Neither this belief nor any other will automatically remain alive in the mind. It must be fed. And as a matter of fact, if you examined a hundred people who had lost their faith in Christianity, I wonder how many of them would turn out to have been reasoned out of it by honest argument? Do not most people simply drift away?</p>
+<p>Now I must turn to Faith in the second or higher sense: and this is the most difficult thing I have tackled yet. I want to approach it by going back to the subject of Humility. You may remember I said that the first step towards humility was to realise that one is proud. I want to add now that the next step is to make some serious attempt to practise the Christian virtues. A week is not enough. Things often go swimmingly for the first week. Try six weeks. By that time, having, as far as one can see, fallen back completely or even fallen lower than the point one began from, one will have discovered some truths about oneself. No man knows how bad he is till he has tried very hard to be good. A silly idea is current that good people do not know what temptation means. This is an obvious lie. Only those who try to resist temptation know how strong it is. After all, you find out the strength of the German army by fighting against it, not by giving in. You find out the strength of a wind by trying to walk against it, not by lying down. A man who gives in to temptation after five minutes simply does not know what it would have been like an hour later. That is why bad people, in one sense, know very little about badness. They have lived a sheltered life by always giving in. We never find out the strength of the evil impulse inside us until we try to fight it: and Christ, because He was the only man who never yielded to temptation, is also the only man who knows to the full what temptation means-the only complete realist. Very well, then. The main thing we learn from a serious attempt to practise the Christian virtues is that we fail. If there was any idea that God had set us a sort of exam, and that we might get good marks by deserving them, that has to be wiped out. If there was any idea of a sort of bargain-any idea that we could perform our side of the contract and thus put God in our debts so that it was up to Him, in mere justice, to perform His side-that has to be wiped out.</p>
+<p>I think every one who has some vague belief in God, until he becomes a Christian, has the idea of an exam, or of a bargain in his mind. The first result of real Christianity is to blow that idea into bits. When they find it blown into bits, some people think this means that Christianity is a failure and give up. They seem to imagine that God is very simple-minded! In fact, of course, He knows all about this. One of the very things Christianity was designed to do was to blow this idea to bits. God has been waiting for the moment at which you discover that there is no question of earning a pass mark in this exam, or putting Him in your debt.</p>
+<p>Then comes another discovery. Every faculty you have, your power of thinking or of moving your limbs from moment to moment, is given you by God. If you devoted every moment of your whole life exclusively to His service you could not give Him anything that was not in a sense His own already. So that when we talk of a man doing anything for God or giving anything to God, I will tell you what it is really like. It is like a small child going to its father and saying, &quot;Daddy, give me sixpence to buy you a birthday present.&quot; Of course, the father does, and he is pleased with the child&apos;s present. It is all very nice and proper, but only an idiot would think that the father is sixpence to the good on the transaction. When a man has made these two discoveries God can really get to work. It is after this that real life begins. The man is awake now. We can now go on to talk of Faith in the second sense.</p>
+</article></body>
